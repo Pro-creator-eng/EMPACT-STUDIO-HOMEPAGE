@@ -6,344 +6,223 @@
   <title>Preise & Pakete | EMPACT STUDIO</title>
   <meta name="description" content="Feste monatliche Preise ab 390 €/Monat für Websites, Social Media Werbung und Videos. 0 € Einrichtungsgebühr, keine teuren Einmalkosten, monatlich kündbar.">
   
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='24' fill='%230B0C10'/><path d='M30 25h40v12H44v13h22v12H44v13h26v12H30z' fill='%236366F1'/></svg>">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='24' fill='%2308090C'/><path d='M30 25h40v12H44v13h22v12H44v13h26v12H30z' fill='%23FFFFFF'/></svg>">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
-      darkMode: 'class',
-      theme: {
-        extend: {
-          colors: {
-            obsidian: {
-              DEFAULT: '#0B0C10',
-              deep: '#060709',
-              card: 'rgba(18, 22, 31, 0.75)',
-              surface: '#121620',
-              border: 'rgba(255, 255, 255, 0.08)',
-              hover: 'rgba(255, 255, 255, 0.14)'
-            },
-            accent: {
-              indigo: '#6366F1',
-              violet: '#8B5CF6',
-              cyan: '#38BDF8',
-              glow: 'rgba(99, 102, 241, 0.25)'
-            }
-          },
-          fontFamily: {
-            sans: ['"Plus Jakarta Sans"', 'system-ui', '-apple-system', 'sans-serif'],
-          },
-          boxShadow: {
-            'glow-sm': '0 0 20px -5px rgba(99, 102, 241, 0.3)',
-            'glow-md': '0 0 35px -5px rgba(99, 102, 241, 0.4)',
-            'glass': '0 8px 32px 0 rgba(0, 0, 0, 0.37)'
-          }
-        }
-      }
+      theme: { extend: { fontFamily: { sans: ['"Plus Jakarta Sans"', 'system-ui', '-apple-system', 'sans-serif'] } } }
     }
   </script>
   <script src="https://unpkg.com/lucide@latest"></script>
   <style>
-    body { background-color: #0B0C10; color: #F8FAFC; font-family: 'Plus Jakarta Sans', sans-serif; overflow-x: hidden; }
-    .glass-nav { background: rgba(11, 12, 16, 0.85); backdrop-filter: blur(20px); border-bottom: 1px solid rgba(255, 255, 255, 0.08); }
-    .glass-card { background: rgba(16, 20, 29, 0.7); backdrop-filter: blur(16px); border: 1px solid rgba(255, 255, 255, 0.08); }
-    .badge-gradient { background: linear-gradient(135deg, rgba(99, 102, 241, 0.15) 0%, rgba(139, 92, 246, 0.15) 100%); border: 1px solid rgba(99, 102, 241, 0.3); }
+    body { background-color: #0A0A0A; color: #E8E8E8; font-family: 'Plus Jakarta Sans', sans-serif; overflow-x: hidden; letter-spacing: -0.01em; }
+    ::-webkit-scrollbar { width: 5px; }
+    ::-webkit-scrollbar-track { background: #0A0A0A; }
+    ::-webkit-scrollbar-thumb { background: #1A1A1A; border-radius: 3px; }
+    input[type="range"] { -webkit-appearance: none; background: #1A1A1A; height: 3px; border-radius: 2px; outline: none; }
+    input[type="range"]::-webkit-slider-thumb { -webkit-appearance: none; width: 16px; height: 16px; border-radius: 50%; background: white; cursor: pointer; }
   </style>
 </head>
-<body class="selection:bg-accent-indigo selection:text-white">
-
-  <!-- Ambient Light -->
-  <div class="fixed inset-0 pointer-events-none -z-10 overflow-hidden">
-    <div class="absolute -top-40 left-1/2 -translate-x-1/2 w-[800px] h-[450px] bg-indigo-600/15 blur-[140px] rounded-full"></div>
-    <div class="absolute bottom-10 -right-32 w-[600px] h-[500px] bg-cyan-600/10 blur-[160px] rounded-full"></div>
-  </div>
+<body class="selection:bg-white selection:text-black">
 
   <!-- NAVIGATION -->
   <header class="fixed top-0 left-0 right-0 z-50">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-4">
-      <nav class="glass-nav rounded-2xl px-5 py-3.5 flex items-center justify-between border border-white/10 shadow-glass">
-        <a href="index.html" class="flex items-center group py-0.5">
-          <img src="assets/logo-white.png" alt="EMPACT STUDIO Logo" class="h-12 sm:h-14 lg:h-16 w-auto object-contain group-hover:scale-105 transition-transform duration-300">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-4">
+      <nav class="bg-[#0A0A0A]/90 backdrop-blur-md border border-white/[0.06] rounded-2xl px-5 sm:px-6 py-3 flex items-center justify-between">
+        <a href="index.html" class="flex items-center py-0.5">
+          <img src="assets/logo-white.png" alt="EMPACT STUDIO Logo" class="h-12 sm:h-14 lg:h-16 w-auto object-contain">
         </a>
-        <div class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-300">
+        <div class="hidden md:flex items-center gap-8 text-[13px] text-neutral-500">
           <a href="index.html" class="hover:text-white transition-colors">Startseite</a>
           <a href="leistungen.html" class="hover:text-white transition-colors">Leistungen</a>
-          <a href="preise.html" class="text-indigo-400 font-semibold">Preise & Pakete</a>
+          <a href="preise.html" class="text-white">Preise</a>
           <a href="ueber-uns.html" class="hover:text-white transition-colors">Über uns</a>
           <a href="kontakt.html" class="hover:text-white transition-colors">Kontakt</a>
         </div>
-        <div class="hidden md:flex items-center gap-3">
-          <a href="buchen.html" class="px-5 py-2.5 rounded-xl bg-accent-indigo text-white text-sm font-semibold shadow-glow-sm flex items-center gap-2">
-            <i data-lucide="calendar" class="w-4 h-4"></i>
-            <span>Erstgespräch buchen</span>
-          </a>
+        <div class="hidden md:flex items-center">
+          <a href="buchen.html" class="px-5 py-2.5 rounded-xl bg-white text-black text-xs font-semibold hover:bg-neutral-100 transition-colors">Erstgespräch buchen</a>
         </div>
-        <button id="mobileMenuBtn" aria-label="Menü" class="md:hidden p-2 text-slate-300">
-          <i data-lucide="menu" class="w-6 h-6"></i>
+        <button id="mobileMenuBtn" aria-label="Menü" class="md:hidden p-2 text-neutral-500 hover:text-white">
+          <i data-lucide="menu" class="w-5 h-5"></i>
         </button>
       </nav>
     </div>
-    <div id="mobileMenu" class="hidden md:hidden max-w-7xl mx-auto px-4 mt-2">
-      <div class="glass-nav rounded-2xl p-6 border border-white/10 flex flex-col gap-4 text-center">
-        <a href="index.html" class="text-slate-200 py-2">Startseite</a>
-        <a href="leistungen.html" class="text-slate-200 py-2">Leistungen</a>
-        <a href="preise.html" class="text-indigo-400 font-semibold py-2">Preise & Pakete</a>
-        <a href="ueber-uns.html" class="text-slate-200 py-2">Über uns</a>
-        <a href="kontakt.html" class="text-slate-200 py-2">Kontakt</a>
-        <a href="buchen.html" class="py-3 rounded-xl bg-accent-indigo text-white font-semibold">Erstgespräch buchen</a>
+    <div id="mobileMenu" class="hidden md:hidden max-w-6xl mx-auto px-4 mt-2">
+      <div class="bg-[#111111] rounded-2xl p-6 border border-white/[0.06] flex flex-col gap-3 text-center">
+        <a href="index.html" class="text-neutral-400 text-sm py-2">Startseite</a>
+        <a href="leistungen.html" class="text-neutral-400 text-sm py-2">Leistungen</a>
+        <a href="preise.html" class="text-white text-sm font-medium py-2">Preise</a>
+        <a href="ueber-uns.html" class="text-neutral-400 text-sm py-2">Über uns</a>
+        <a href="kontakt.html" class="text-neutral-400 text-sm py-2">Kontakt</a>
+        <a href="buchen.html" class="mt-2 py-3 rounded-xl bg-white text-black font-semibold text-sm">Erstgespräch buchen</a>
       </div>
     </div>
   </header>
 
-  <!-- MAIN PRICING -->
-  <main class="pt-36 pb-24">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+  <!-- MAIN -->
+  <main class="pt-40 pb-24">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
       
       <!-- Headline -->
-      <div class="text-center max-w-3xl mx-auto mb-16">
-        <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full badge-gradient text-xs font-semibold text-indigo-300 uppercase tracking-wider mb-4">
-          Fair & Transparent
-        </div>
-        <h1 class="text-4xl sm:text-6xl font-extrabold text-white tracking-tight">
+      <div class="text-center max-w-xl mx-auto mb-16">
+        <p class="text-xs text-neutral-600 uppercase tracking-[0.2em] mb-3">Preise</p>
+        <h1 class="text-3xl sm:text-5xl font-bold text-white tracking-tight">
           Einfache Monatspreise statt teurer Einmalrechnungen.
         </h1>
-        <p class="mt-5 text-slate-400 text-base sm:text-lg">
-          Klassische Agenturen verlangen oft 4.000 € bis 8.000 € auf einen Schlag – und danach meldet sich niemand mehr. Bei uns zahlen Sie einen fairen Monatsbeitrag, haben immer einen festen Ansprechpartner und können monatlich kündigen.
+        <p class="mt-4 text-neutral-500 text-sm leading-relaxed">
+          Klassische Agenturen verlangen oft 4.000–8.000 € auf einen Schlag. Bei uns zahlen Sie einen fairen Monatsbeitrag und können monatlich kündigen.
         </p>
       </div>
 
       <!-- 3 PRICING CARDS -->
-      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch mb-20">
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-5 items-stretch mb-24">
         
-        <!-- CARD 1: ESSENTIAL -->
-        <div class="glass-card rounded-3xl p-8 flex flex-col justify-between border-white/10 hover:border-slate-500/40 transition-all">
+        <!-- ESSENTIAL -->
+        <div class="bg-[#111111] rounded-2xl p-7 border border-white/[0.06] flex flex-col justify-between hover:border-white/[0.12] transition-colors duration-300">
           <div>
-            <div class="flex items-center justify-between mb-4">
-              <span class="text-xs font-bold text-slate-400 uppercase tracking-wider">Paket 01</span>
-              <span class="text-[11px] font-semibold px-2.5 py-1 rounded-full bg-slate-800 text-slate-300">Moderne Website</span>
-            </div>
-            <h2 class="text-2xl font-extrabold text-white">Essential</h2>
-            <p class="text-xs text-slate-400 mt-1">Ideal für Unternehmen, die eine erstklassige neue Firmen-Website brauchen und sich um nichts kümmern möchten.</p>
+            <h2 class="text-lg font-semibold text-white">Essential</h2>
+            <p class="text-xs text-neutral-500 mt-1">Moderne Website und Rundum-Pflege.</p>
             
-            <div class="my-6 pb-6 border-b border-white/10">
+            <div class="my-6 pb-6 border-b border-white/[0.06]">
               <div class="flex items-baseline gap-1">
-                <span class="text-4xl font-black text-white">390 €</span>
-                <span class="text-xs text-slate-400">/ Monat</span>
+                <span class="text-3xl font-bold text-white">390 €</span>
+                <span class="text-xs text-neutral-600">/ Monat</span>
               </div>
-              <div class="text-[11px] text-emerald-400 mt-1 font-medium">✓ 0 € Einrichtungsgebühr • Erstellung inklusive</div>
+              <div class="text-xs text-emerald-500/80 mt-1.5">0 € Einrichtung · Erstellung inklusive</div>
             </div>
 
-            <ul class="space-y-3.5 text-xs text-slate-300 mb-8">
-              <li class="flex items-start gap-2.5">
-                <i data-lucide="check" class="w-4 h-4 text-accent-cyan shrink-0 mt-0.5"></i>
-                <span><strong>Komplette Website-Erstellung</strong> durch Elias Ambrosius</span>
-              </li>
-              <li class="flex items-start gap-2.5">
-                <i data-lucide="check" class="w-4 h-4 text-accent-cyan shrink-0 mt-0.5"></i>
-                <span><strong>Schneller Speicherplatz & Domain-Hosting</strong></span>
-              </li>
-              <li class="flex items-start gap-2.5">
-                <i data-lucide="check" class="w-4 h-4 text-accent-cyan shrink-0 mt-0.5"></i>
-                <span><strong>Regelmäßige Wartung & Updates</strong> rund um die Uhr</span>
-              </li>
-              <li class="flex items-start gap-2.5">
-                <i data-lucide="check" class="w-4 h-4 text-accent-cyan shrink-0 mt-0.5"></i>
-                <span><strong>Änderungen inklusive:</strong> Wir tauschen Texte & Bilder für Sie aus</span>
-              </li>
-              <li class="flex items-start gap-2.5">
-                <i data-lucide="check" class="w-4 h-4 text-accent-cyan shrink-0 mt-0.5"></i>
-                <span>Google-Firmeneintrag wird optimiert</span>
-              </li>
-              <li class="flex items-start gap-2.5">
-                <i data-lucide="check" class="w-4 h-4 text-accent-cyan shrink-0 mt-0.5"></i>
-                <span>Rechtssicher (DSGVO, Impressum & Cookie-Banner)</span>
-              </li>
+            <ul class="space-y-2.5 text-xs text-neutral-400 mb-8">
+              <li class="flex items-start gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-neutral-600 shrink-0 mt-0.5"></i>Komplette Website-Erstellung</li>
+              <li class="flex items-start gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-neutral-600 shrink-0 mt-0.5"></i>Schneller Speicherplatz & Domain-Hosting</li>
+              <li class="flex items-start gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-neutral-600 shrink-0 mt-0.5"></i>Regelmäßige Wartung & Updates</li>
+              <li class="flex items-start gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-neutral-600 shrink-0 mt-0.5"></i>Änderungen inklusive</li>
+              <li class="flex items-start gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-neutral-600 shrink-0 mt-0.5"></i>Google-Firmeneintrag</li>
             </ul>
           </div>
-
-          <a href="buchen.html" class="w-full py-3.5 px-4 rounded-xl bg-white/10 hover:bg-white/20 text-white font-semibold text-xs text-center border border-white/15 transition-all">
-            Essential wählen
-          </a>
+          <a href="buchen.html" class="w-full py-3 rounded-xl border border-white/[0.1] text-neutral-300 text-xs text-center hover:bg-white/[0.04] transition-colors">Essential wählen</a>
         </div>
 
-        <!-- CARD 2: GROWTH ENGINE (HIGHLIGHT) -->
-        <div class="glass-card rounded-3xl p-8 flex flex-col justify-between border-accent-indigo shadow-glow-md relative lg:-translate-y-4 bg-gradient-to-b from-[#141824] to-[#0D1018]">
-          <div class="absolute -top-3.5 left-1/2 -translate-x-1/2">
-            <span class="px-4 py-1 rounded-full text-xs font-extrabold uppercase tracking-wide bg-gradient-to-r from-accent-indigo to-accent-violet text-white shadow-glow-sm">
-              Empfehlung • Am beliebtesten
-            </span>
+        <!-- GROWTH ENGINE -->
+        <div class="bg-[#111111] rounded-2xl p-7 border border-white/[0.15] flex flex-col justify-between relative">
+          <div class="absolute -top-3 left-1/2 -translate-x-1/2">
+            <span class="px-3.5 py-1 rounded-full text-[11px] font-semibold bg-white text-black">Empfehlung</span>
           </div>
-
           <div>
-            <div class="flex items-center justify-between mb-4 mt-2">
-              <span class="text-xs font-bold text-indigo-400 uppercase tracking-wider">Paket 02</span>
-              <span class="text-[11px] font-semibold px-2.5 py-1 rounded-full bg-indigo-500/20 text-indigo-300 border border-indigo-500/30">Mehr Neukunden</span>
+            <div class="mt-1">
+              <h2 class="text-lg font-semibold text-white">Growth Engine</h2>
+              <p class="text-xs text-neutral-500 mt-1">Website + Werbung + Videos in einem Paket.</p>
             </div>
-            <h2 class="text-2xl font-extrabold text-white">Growth Engine</h2>
-            <p class="text-xs text-slate-300 mt-1">Das Komplettpaket: Wir bauen Ihre Website und bringen Ihnen mit bezahlter Werbung jeden Monat neue Kunden.</p>
             
-            <div class="my-6 pb-6 border-b border-white/10">
+            <div class="my-6 pb-6 border-b border-white/[0.06]">
               <div class="flex items-baseline gap-1">
-                <span class="text-4xl font-black text-white">890 €</span>
-                <span class="text-xs text-indigo-300">/ Monat</span>
+                <span class="text-3xl font-bold text-white">890 €</span>
+                <span class="text-xs text-neutral-600">/ Monat</span>
               </div>
-              <div class="text-[11px] text-emerald-400 mt-1 font-medium">✓ Inklusive Website + Werbekampagnen + Videos</div>
+              <div class="text-xs text-emerald-500/80 mt-1.5">Website + Werbekampagnen + Videos inklusive</div>
             </div>
 
-            <ul class="space-y-3.5 text-xs text-slate-200 mb-8">
-              <li class="flex items-start gap-2.5">
-                <i data-lucide="check" class="w-4 h-4 text-accent-indigo shrink-0 mt-0.5"></i>
-                <span><strong>Alles aus dem Essential-Paket</strong> (komplette Website, Hosting & Pflege)</span>
-              </li>
-              <li class="flex items-start gap-2.5">
-                <i data-lucide="check" class="w-4 h-4 text-accent-indigo shrink-0 mt-0.5"></i>
-                <span><strong>Werbung auf Instagram, Facebook & TikTok</strong></span>
-              </li>
-              <li class="flex items-start gap-2.5">
-                <i data-lucide="check" class="w-4 h-4 text-accent-indigo shrink-0 mt-0.5"></i>
-                <span><strong>4 neue Werbevideos & Grafiken jeden Monat</strong> von uns</span>
-              </li>
-              <li class="flex items-start gap-2.5">
-                <i data-lucide="check" class="w-4 h-4 text-accent-indigo shrink-0 mt-0.5"></i>
-                <span><strong>Einfaches Kontaktformular:</strong> Anfragen landen direkt auf Ihrem Handy</span>
-              </li>
-              <li class="flex items-start gap-2.5">
-                <i data-lucide="check" class="w-4 h-4 text-accent-indigo shrink-0 mt-0.5"></i>
-                <span>Wöchentliche Kontrolle & Optimierung der Anzeigen durch Marlon</span>
-              </li>
-              <li class="flex items-start gap-2.5">
-                <i data-lucide="check" class="w-4 h-4 text-accent-indigo shrink-0 mt-0.5"></i>
-                <span>Monatliches kurzes Telefonat mit Zusammenfassung aller Ergebnisse</span>
-              </li>
+            <ul class="space-y-2.5 text-xs text-neutral-400 mb-8">
+              <li class="flex items-start gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-white/60 shrink-0 mt-0.5"></i>Alles aus dem Essential-Paket</li>
+              <li class="flex items-start gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-white/60 shrink-0 mt-0.5"></i>Werbung auf Instagram, Facebook & TikTok</li>
+              <li class="flex items-start gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-white/60 shrink-0 mt-0.5"></i>4 neue Werbevideos & Grafiken pro Monat</li>
+              <li class="flex items-start gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-white/60 shrink-0 mt-0.5"></i>Anfragen landen direkt bei Ihnen</li>
+              <li class="flex items-start gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-white/60 shrink-0 mt-0.5"></i>Wöchentliche Kontrolle & Optimierung</li>
             </ul>
           </div>
-
-          <a href="buchen.html" class="w-full py-4 px-4 rounded-xl bg-gradient-to-r from-accent-indigo to-accent-violet hover:opacity-95 text-white font-bold text-xs text-center shadow-glow-sm transition-all">
-            Growth Engine anfragen
-          </a>
+          <a href="buchen.html" class="w-full py-3.5 rounded-xl bg-white text-black font-semibold text-xs text-center hover:bg-neutral-100 transition-colors">Growth Engine anfragen</a>
         </div>
 
-        <!-- CARD 3: SCALE PARTNER -->
-        <div class="glass-card rounded-3xl p-8 flex flex-col justify-between border-white/10 hover:border-slate-500/40 transition-all">
+        <!-- SCALE PARTNER -->
+        <div class="bg-[#111111] rounded-2xl p-7 border border-white/[0.06] flex flex-col justify-between hover:border-white/[0.12] transition-colors duration-300">
           <div>
-            <div class="flex items-center justify-between mb-4">
-              <span class="text-xs font-bold text-slate-400 uppercase tracking-wider">Paket 03</span>
-              <span class="text-[11px] font-semibold px-2.5 py-1 rounded-full bg-slate-800 text-slate-300">Rundum-Sorglos</span>
-            </div>
-            <h2 class="text-2xl font-extrabold text-white">Scale Partner</h2>
-            <p class="text-xs text-slate-400 mt-1">Für Unternehmen, die in ihrer Region die klare Nummer 1 werden und ihre gesamte Außendarstellung abgeben wollen.</p>
+            <h2 class="text-lg font-semibold text-white">Scale Partner</h2>
+            <p class="text-xs text-neutral-500 mt-1">Rundum-Sorglos für die Nummer 1 in Ihrer Region.</p>
             
-            <div class="my-6 pb-6 border-b border-white/10">
+            <div class="my-6 pb-6 border-b border-white/[0.06]">
               <div class="flex items-baseline gap-1">
-                <span class="text-4xl font-black text-white">1.690 €</span>
-                <span class="text-xs text-slate-400">/ Monat</span>
+                <span class="text-3xl font-bold text-white">1.690 €</span>
+                <span class="text-xs text-neutral-600">/ Monat</span>
               </div>
-              <div class="text-[11px] text-emerald-400 mt-1 font-medium">✓ Komplette Betreuung all Ihrer Kanäle</div>
+              <div class="text-xs text-emerald-500/80 mt-1.5">Komplette Betreuung aller Kanäle</div>
             </div>
 
-            <ul class="space-y-3.5 text-xs text-slate-300 mb-8">
-              <li class="flex items-start gap-2.5">
-                <i data-lucide="check" class="w-4 h-4 text-accent-cyan shrink-0 mt-0.5"></i>
-                <span><strong>Werbung überall:</strong> Meta, Google Ads & TikTok</span>
-              </li>
-              <li class="flex items-start gap-2.5">
-                <i data-lucide="check" class="w-4 h-4 text-accent-cyan shrink-0 mt-0.5"></i>
-                <span><strong>8 bis 12 Videos & Beiträge jeden Monat</strong></span>
-              </li>
-              <li class="flex items-start gap-2.5">
-                <i data-lucide="check" class="w-4 h-4 text-accent-cyan shrink-0 mt-0.5"></i>
-                <span><strong>Direkter WhatsApp- oder Slack-Kanal</strong> mit Marlon & Elias</span>
-              </li>
-              <li class="flex items-start gap-2.5">
-                <i data-lucide="check" class="w-4 h-4 text-accent-cyan shrink-0 mt-0.5"></i>
-                <span>Schnelle Antworten und Änderungen innerhalb weniger Stunden</span>
-              </li>
-              <li class="flex items-start gap-2.5">
-                <i data-lucide="check" class="w-4 h-4 text-accent-cyan shrink-0 mt-0.5"></i>
-                <span>Wöchentliche kurze Updates und persönliche Abstimmung</span>
-              </li>
+            <ul class="space-y-2.5 text-xs text-neutral-400 mb-8">
+              <li class="flex items-start gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-neutral-600 shrink-0 mt-0.5"></i>Meta, Google Ads & TikTok</li>
+              <li class="flex items-start gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-neutral-600 shrink-0 mt-0.5"></i>8–12 Videos & Beiträge pro Monat</li>
+              <li class="flex items-start gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-neutral-600 shrink-0 mt-0.5"></i>Direkter WhatsApp-Draht</li>
+              <li class="flex items-start gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-neutral-600 shrink-0 mt-0.5"></i>Änderungen innerhalb weniger Stunden</li>
             </ul>
           </div>
-
-          <a href="buchen.html" class="w-full py-3.5 px-4 rounded-xl bg-white/10 hover:bg-white/20 text-white font-semibold text-xs text-center border border-white/15 transition-all">
-            Scale Partner wählen
-          </a>
+          <a href="buchen.html" class="w-full py-3 rounded-xl border border-white/[0.1] text-neutral-300 text-xs text-center hover:bg-white/[0.04] transition-colors">Scale Partner wählen</a>
         </div>
-
       </div>
 
       <!-- ROI CALCULATOR -->
-      <div class="glass-card rounded-3xl p-8 sm:p-12 mb-20 border-white/10 max-w-4xl mx-auto">
+      <div class="bg-[#111111] rounded-2xl p-8 sm:p-10 mb-20 max-w-3xl mx-auto border border-white/[0.06]">
         <div class="text-center mb-8">
-          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full badge-gradient text-xs font-semibold text-indigo-300 uppercase mb-2">
-            Einfacher Rechner
-          </div>
-          <h2 class="text-2xl sm:text-3xl font-extrabold text-white">Was bringt Ihnen das unterm Strich?</h2>
-          <p class="text-slate-400 text-xs sm:text-sm mt-1">Schieben Sie die Regler und sehen Sie, wie schnell sich eine Zusammenarbeit für Sie rechnet.</p>
+          <p class="text-xs text-neutral-600 uppercase tracking-[0.2em] mb-2">Rendite-Rechner</p>
+          <h2 class="text-xl font-bold text-white">Was bringt Ihnen das unterm Strich?</h2>
+          <p class="text-neutral-500 text-xs mt-1.5">Schieben Sie die Regler und sehen Sie, wie schnell sich die Zusammenarbeit rechnet.</p>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
           <div class="space-y-6">
             <div>
-              <div class="flex justify-between text-xs text-slate-300 mb-2">
-                <span>Durchschnittlicher Wert eines Neukunden für Sie:</span>
-                <strong class="text-white text-sm" id="customerValDisplay">1.500 €</strong>
+              <div class="flex justify-between text-xs text-neutral-400 mb-2">
+                <span>Wert eines Neukunden:</span>
+                <strong class="text-white" id="customerValDisplay">1.500 €</strong>
               </div>
-              <input type="range" id="customerValSlider" min="200" max="5000" step="100" value="1500" 
-                     class="w-full accent-indigo-500 cursor-pointer" oninput="updateRoiCalc()">
+              <input type="range" id="customerValSlider" min="200" max="5000" step="100" value="1500" class="w-full" oninput="updateRoiCalc()">
             </div>
-
             <div>
-              <div class="flex justify-between text-xs text-slate-300 mb-2">
-                <span>Wie viele Neukunden möchten Sie pro Monat gewinnen?</span>
-                <strong class="text-white text-sm" id="newClientsDisplay">4 Kunden</strong>
+              <div class="flex justify-between text-xs text-neutral-400 mb-2">
+                <span>Zusätzliche Neukunden / Monat:</span>
+                <strong class="text-white" id="newClientsDisplay">4 Kunden</strong>
               </div>
-              <input type="range" id="newClientsSlider" min="1" max="15" step="1" value="4" 
-                     class="w-full accent-indigo-500 cursor-pointer" oninput="updateRoiCalc()">
+              <input type="range" id="newClientsSlider" min="1" max="15" step="1" value="4" class="w-full" oninput="updateRoiCalc()">
             </div>
-
-            <div class="text-[11px] text-slate-400">
-              *Beispiel: Bei einem Handwerker, Dienstleister oder Fachbetrieb reicht oft schon ein einziger Neukunde im Monat, um die Kosten komplett wieder einzuspielen.
-            </div>
+            <p class="text-[11px] text-neutral-600 leading-relaxed">
+              *Oft reicht schon 1 Neukunde pro Monat, um die Kosten einzuspielen.
+            </p>
           </div>
 
-          <div class="bg-obsidian-surface rounded-2xl p-6 border border-white/10 text-center">
-            <span class="text-xs text-slate-400 uppercase font-semibold">Geschätzter zusätzlicher Monatsumsatz</span>
-            <div class="text-4xl sm:text-5xl font-black text-emerald-400 my-2" id="roiResult">6.000 €</div>
-            <p class="text-xs text-slate-300 mt-2">
-              Bei z.B. <strong>890 € Investition</strong> (Growth-Paket) bleibt Ihnen:
+          <div class="bg-white/[0.02] rounded-xl p-6 border border-white/[0.05] text-center">
+            <span class="text-xs text-neutral-600 uppercase tracking-[0.15em]">Zusätzlicher Monatsumsatz</span>
+            <div class="text-3xl font-bold text-white my-2" id="roiResult">6.000 €</div>
+            <p class="text-xs text-neutral-500 mt-2">
+              Bei 890 € Investition (Growth-Paket):
             </p>
-            <div class="text-xl font-bold text-accent-cyan mt-1" id="roiProfit">+5.110 € Gewinn / Monat</div>
-            <a href="buchen.html" class="mt-5 inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-accent-indigo text-white text-xs font-bold shadow-glow-sm">
-              <span>Jetzt Potenzial besprechen</span>
-              <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+            <div class="text-base font-semibold text-emerald-500/80 mt-1" id="roiProfit">+5.110 € Gewinn / Monat</div>
+            <a href="buchen.html" class="mt-5 inline-block px-5 py-2.5 rounded-xl bg-white text-black text-xs font-semibold hover:bg-neutral-100 transition-colors">
+              Potenzial besprechen →
             </a>
           </div>
         </div>
       </div>
 
       <!-- FAQ -->
-      <div class="max-w-3xl mx-auto">
-        <h3 class="text-2xl font-bold text-white text-center mb-8">Häufige Fragen zu den Preisen</h3>
-        <div class="space-y-3 text-xs">
-          <div class="glass-card rounded-xl p-5 border-white/10">
-            <div class="font-bold text-white">Gibt es wirklich keine teure Einrichtungsgebühr?</div>
-            <div class="text-slate-300 mt-2 leading-relaxed">
-              Nein, genau das machen wir anders als herkömmliche Agenturen. Sie müssen nicht 5.000 € auf einen Schlag hinlegen. Die komplette Erstellung Ihrer neuen Website und das Einrichten der Werbekampagnen sind im Monatsbeitrag bereits enthalten.
+      <div class="max-w-2xl mx-auto">
+        <h3 class="text-lg font-semibold text-white text-center mb-6">Häufige Fragen</h3>
+        <div class="space-y-3">
+          <div class="bg-[#111111] rounded-xl p-5 border border-white/[0.06]">
+            <div class="text-sm font-medium text-white">Gibt es wirklich keine Einrichtungsgebühr?</div>
+            <div class="text-xs text-neutral-500 mt-2 leading-relaxed">
+              Nein. Die Erstellung Ihrer Website und das Setup der Werbekampagnen sind im Monatsbeitrag bereits enthalten. Sie müssen nicht 5.000 € auf einen Schlag zahlen.
             </div>
           </div>
-          <div class="glass-card rounded-xl p-5 border-white/10">
-            <div class="font-bold text-white">Wie lange bin ich gebunden?</div>
-            <div class="text-slate-300 mt-2 leading-relaxed">
-              Es gibt keine 12- oder 24-Monats-Verträge. Nach einer fairen Startphase von nur 3 Monaten (damit die Werbekampagnen richtig anlaufen können) ist die Zusammenarbeit monatlich kündbar.
+          <div class="bg-[#111111] rounded-xl p-5 border border-white/[0.06]">
+            <div class="text-sm font-medium text-white">Wie lange bin ich gebunden?</div>
+            <div class="text-xs text-neutral-500 mt-2 leading-relaxed">
+              Nach einer Startphase von 3 Monaten (damit Kampagnen anlernen können) ist die Zusammenarbeit monatlich kündbar. Keine langen Knebelverträge.
             </div>
           </div>
-          <div class="glass-card rounded-xl p-5 border-white/10">
-            <div class="font-bold text-white">Wie bezahle ich das Werbebudget für Instagram & Co.?</div>
-            <div class="text-slate-300 mt-2 leading-relaxed">
-              Das Werbebudget (z. B. 10 € oder 20 € am Tag) zahlen Sie direkt an Meta (Instagram/Facebook) oder Google. Sie behalten zu jeder Sekunde die volle Kontrolle und können das Budget jederzeit erhöhen oder pausieren.
+          <div class="bg-[#111111] rounded-xl p-5 border border-white/[0.06]">
+            <div class="text-sm font-medium text-white">Wie bezahle ich das Werbebudget?</div>
+            <div class="text-xs text-neutral-500 mt-2 leading-relaxed">
+              Das Werbebudget (z. B. 10 € am Tag) zahlen Sie direkt an Meta oder Google. Sie behalten jederzeit die volle Kostenkontrolle.
             </div>
           </div>
         </div>
@@ -353,20 +232,23 @@
   </main>
 
   <!-- FOOTER -->
-  <footer class="border-t border-white/10 bg-obsidian-deep py-12">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+  <footer class="border-t border-white/[0.06] py-12">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex flex-col md:flex-row items-center justify-between gap-6">
         <div class="flex items-center gap-3">
-          <img src="assets/logo-white.png" alt="EMPACT STUDIO" class="h-9 sm:h-10 w-auto object-contain">
-          <span class="text-xs text-slate-400">| Marlon Staatz & Elias Ambrosius GbR</span>
+          <img src="assets/logo-white.png" alt="EMPACT STUDIO" class="h-8 w-auto object-contain opacity-70">
+          <span class="text-xs text-neutral-700">Marlon Staatz & Elias Ambrosius GbR</span>
         </div>
-        <div class="flex items-center gap-6 text-xs text-slate-400">
-          <a href="leistungen.html" class="hover:text-white">Leistungen</a>
-          <a href="preise.html" class="hover:text-white">Preise & Pakete</a>
-          <a href="ueber-uns.html" class="hover:text-white">Über uns</a>
-          <a href="kontakt.html" class="hover:text-white">Kontakt</a>
-          <a href="impressum.html" class="hover:text-white">Impressum</a>
-          <a href="datenschutz.html" class="hover:text-white">Datenschutz</a>
+        <div class="flex items-center gap-6 text-xs text-neutral-600">
+          <a href="leistungen.html" class="hover:text-neutral-400 transition-colors">Leistungen</a>
+          <a href="preise.html" class="hover:text-neutral-400 transition-colors">Preise</a>
+          <a href="ueber-uns.html" class="hover:text-neutral-400 transition-colors">Über uns</a>
+          <a href="kontakt.html" class="hover:text-neutral-400 transition-colors">Kontakt</a>
+        </div>
+        <div class="flex items-center gap-3 text-xs text-neutral-700">
+          <a href="impressum.html" class="hover:text-neutral-400 transition-colors">Impressum</a>
+          <span>·</span>
+          <a href="datenschutz.html" class="hover:text-neutral-400 transition-colors">Datenschutz</a>
         </div>
       </div>
     </div>

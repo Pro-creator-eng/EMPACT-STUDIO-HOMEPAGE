@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Kostenloses Erstgespräch buchen | EMPACT STUDIO</title>
+  <title>Erstgespräch buchen | EMPACT STUDIO</title>
   <meta name="description" content="Buchen Sie Ihr unverbindliches 30-minütiges Kennenlerngespräch mit Marlon Staatz oder Elias Ambrosius. Einfach Termin wählen – 100% kostenlos.">
   
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='24' fill='%230B0C10'/><path d='M30 25h40v12H44v13h22v12H44v13h26v12H30z' fill='%236366F1'/></svg>">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='24' fill='%2308090C'/><path d='M30 25h40v12H44v13h22v12H44v13h26v12H30z' fill='%23FFFFFF'/></svg>">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
@@ -18,27 +18,14 @@
         extend: {
           colors: {
             obsidian: {
-              DEFAULT: '#0B0C10',
+              DEFAULT: '#090A0D',
               deep: '#060709',
-              card: 'rgba(18, 22, 31, 0.75)',
-              surface: '#121620',
-              border: 'rgba(255, 255, 255, 0.08)',
-              hover: 'rgba(255, 255, 255, 0.14)'
-            },
-            accent: {
-              indigo: '#6366F1',
-              violet: '#8B5CF6',
-              cyan: '#38BDF8',
-              glow: 'rgba(99, 102, 241, 0.25)'
+              card: '#0F1015',
+              surface: '#13141A',
             }
           },
           fontFamily: {
             sans: ['"Plus Jakarta Sans"', 'system-ui', '-apple-system', 'sans-serif'],
-          },
-          boxShadow: {
-            'glow-sm': '0 0 20px -5px rgba(99, 102, 241, 0.3)',
-            'glow-md': '0 0 35px -5px rgba(99, 102, 241, 0.4)',
-            'glass': '0 8px 32px 0 rgba(0, 0, 0, 0.37)'
           }
         }
       }
@@ -46,30 +33,23 @@
   </script>
   <script src="https://unpkg.com/lucide@latest"></script>
   <style>
-    body { background-color: #0B0C10; color: #F8FAFC; font-family: 'Plus Jakarta Sans', sans-serif; overflow-x: hidden; }
-    .glass-nav { background: rgba(11, 12, 16, 0.85); backdrop-filter: blur(20px); border-bottom: 1px solid rgba(255, 255, 255, 0.08); }
-    .glass-card { background: rgba(16, 20, 29, 0.7); backdrop-filter: blur(16px); border: 1px solid rgba(255, 255, 255, 0.08); }
-    .badge-gradient { background: linear-gradient(135deg, rgba(99, 102, 241, 0.15) 0%, rgba(139, 92, 246, 0.15) 100%); border: 1px solid rgba(99, 102, 241, 0.3); }
-    .slot-btn.active { background: #6366F1; color: #fff; border-color: #6366F1; }
-    .expert-card.active { border-color: #6366F1; background: rgba(99, 102, 241, 0.12); }
+    body { background-color: #090A0D; color: #F4F4F6; font-family: 'Plus Jakarta Sans', sans-serif; overflow-x: hidden; letter-spacing: -0.01em; }
+    .glass-nav { background: rgba(10, 11, 15, 0.82); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border: 1px solid rgba(255, 255, 255, 0.07); }
+    .minimal-card { background: rgba(15, 16, 21, 0.7); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border: 1px solid rgba(255, 255, 255, 0.07); }
+    .slot-btn.active { background: #FFFFFF; color: #000000; border-color: #FFFFFF; font-weight: 600; }
+    .expert-card.active { border-color: rgba(255, 255, 255, 0.35); background: rgba(255, 255, 255, 0.06); }
   </style>
 </head>
-<body class="selection:bg-accent-indigo selection:text-white">
-
-  <!-- Ambient Background Lighting -->
-  <div class="fixed inset-0 pointer-events-none -z-10 overflow-hidden">
-    <div class="absolute -top-40 left-1/2 -translate-x-1/2 w-[800px] h-[450px] bg-indigo-600/15 blur-[140px] rounded-full"></div>
-    <div class="absolute bottom-10 -right-32 w-[600px] h-[500px] bg-violet-600/10 blur-[160px] rounded-full"></div>
-  </div>
+<body class="selection:bg-white selection:text-black">
 
   <!-- NAVIGATION -->
   <header class="fixed top-0 left-0 right-0 z-50">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-4">
-      <nav class="glass-nav rounded-2xl px-5 py-3.5 flex items-center justify-between border border-white/10 shadow-glass">
+      <nav class="glass-nav rounded-2xl px-5 sm:px-6 py-3 flex items-center justify-between shadow-2xl">
         <a href="index.html" class="flex items-center group py-0.5">
-          <img src="assets/logo-white.png" alt="EMPACT STUDIO Logo" class="h-12 sm:h-14 lg:h-16 w-auto object-contain group-hover:scale-105 transition-transform duration-300">
+          <img src="assets/logo-white.png" alt="EMPACT STUDIO Logo" class="h-12 sm:h-14 lg:h-16 w-auto object-contain group-hover:opacity-90 transition-opacity">
         </a>
-        <div class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-300">
+        <div class="hidden md:flex items-center gap-8 text-sm font-medium text-neutral-400">
           <a href="index.html" class="hover:text-white transition-colors">Startseite</a>
           <a href="leistungen.html" class="hover:text-white transition-colors">Leistungen</a>
           <a href="preise.html" class="hover:text-white transition-colors">Preise & Pakete</a>
@@ -77,42 +57,42 @@
           <a href="kontakt.html" class="hover:text-white transition-colors">Kontakt</a>
         </div>
         <div class="hidden md:flex items-center gap-3">
-          <a href="buchen.html" class="px-5 py-2.5 rounded-xl bg-accent-indigo text-white text-sm font-semibold shadow-glow-sm flex items-center gap-2">
-            <i data-lucide="calendar" class="w-4 h-4"></i>
+          <a href="buchen.html" class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-white text-black text-xs font-semibold tracking-wide hover:bg-neutral-200 transition-all duration-200">
+            <i data-lucide="calendar" class="w-3.5 h-3.5"></i>
             <span>Erstgespräch buchen</span>
           </a>
         </div>
-        <button id="mobileMenuBtn" aria-label="Menü" class="md:hidden p-2 text-slate-300">
+        <button id="mobileMenuBtn" aria-label="Menü" class="md:hidden p-2 text-neutral-400 hover:text-white focus:outline-none">
           <i data-lucide="menu" class="w-6 h-6"></i>
         </button>
       </nav>
     </div>
     <div id="mobileMenu" class="hidden md:hidden max-w-7xl mx-auto px-4 mt-2">
       <div class="glass-nav rounded-2xl p-6 border border-white/10 flex flex-col gap-4 text-center">
-        <a href="index.html" class="text-slate-200 py-2">Startseite</a>
-        <a href="leistungen.html" class="text-slate-200 py-2">Leistungen</a>
-        <a href="preise.html" class="text-slate-200 py-2">Preise & Pakete</a>
-        <a href="ueber-uns.html" class="text-slate-200 py-2">Über uns</a>
-        <a href="kontakt.html" class="text-slate-200 py-2">Kontakt</a>
-        <a href="buchen.html" class="py-3 rounded-xl bg-accent-indigo text-white font-semibold">Erstgespräch buchen</a>
+        <a href="index.html" class="text-neutral-300 py-2">Startseite</a>
+        <a href="leistungen.html" class="text-neutral-300 py-2">Leistungen</a>
+        <a href="preise.html" class="text-neutral-300 py-2">Preise & Pakete</a>
+        <a href="ueber-uns.html" class="text-neutral-300 py-2">Über uns</a>
+        <a href="kontakt.html" class="text-neutral-300 py-2">Kontakt</a>
+        <a href="buchen.html" class="py-3 rounded-xl bg-white text-black font-semibold text-xs">Erstgespräch buchen</a>
       </div>
     </div>
   </header>
 
   <!-- MAIN BOOKING CONTAINER -->
-  <main class="pt-32 pb-24 relative">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+  <main class="pt-36 pb-24 relative">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
       
       <!-- Top Header -->
-      <div class="text-center max-w-3xl mx-auto mb-12">
-        <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full badge-gradient text-xs font-semibold text-indigo-300 uppercase tracking-wider mb-3">
-          <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
-          30 Minuten • 100% Kostenlos
+      <div class="text-center max-w-2xl mx-auto mb-14">
+        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-white/10 bg-white/[0.03] text-xs font-medium text-neutral-400 mb-4">
+          <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+          <span>30 Minuten • 100% Kostenlos & Unverbindlich</span>
         </div>
-        <h1 class="text-3xl sm:text-5xl font-extrabold text-white tracking-tight">
+        <h1 class="text-3xl sm:text-5xl font-bold text-white tracking-tight">
           Lassen Sie uns einfach kurz sprechen.
         </h1>
-        <p class="mt-4 text-slate-400 text-sm sm:text-base leading-relaxed">
+        <p class="mt-4 text-neutral-400 text-sm sm:text-base leading-relaxed">
           Wählen Sie Ihren Wunschtermin. In 30 Minuten am Telefon oder per Video-Call schauen wir uns Ihren Betrieb an und sagen Ihnen ehrlich, wie Sie mehr Kunden gewinnen können.
         </p>
       </div>
@@ -121,141 +101,136 @@
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
         
         <!-- Left: Summary -->
-        <div class="lg:col-span-4 space-y-6">
-          <div class="glass-card rounded-3xl p-6 border-white/10">
-            <h2 class="text-lg font-bold text-white mb-4 flex items-center gap-2">
-              <i data-lucide="info" class="w-5 h-5 text-accent-indigo"></i>
-              Was passiert im Gespräch?
+        <div class="lg:col-span-4 space-y-5">
+          <div class="minimal-card rounded-2xl p-6">
+            <h2 class="text-base font-bold text-white mb-4 flex items-center gap-2">
+              <i data-lucide="info" class="w-4 h-4 text-neutral-400"></i>
+              Ablauf des Gesprächs
             </h2>
-            <div class="space-y-4 text-xs text-slate-300">
+            <div class="space-y-4 text-xs text-neutral-300">
               <div class="flex items-start gap-3">
-                <div class="w-6 h-6 rounded-full bg-indigo-500/20 text-indigo-300 flex items-center justify-center shrink-0 font-bold">1</div>
+                <div class="w-5 h-5 rounded-full bg-white/[0.08] text-white flex items-center justify-center shrink-0 font-semibold text-[10px]">1</div>
                 <div>
-                  <strong class="text-white block">Kurzer Blick auf Ihre Website</strong>
-                  Wir schauen uns an, wie Ihr Betrieb aktuell im Internet wirkt.
+                  <strong class="text-white block">Status-Quo Check</strong>
+                  Wir schauen uns an, wie Ihr Betrieb aktuell online wirkt.
                 </div>
               </div>
               <div class="flex items-start gap-3">
-                <div class="w-6 h-6 rounded-full bg-indigo-500/20 text-indigo-300 flex items-center justify-center shrink-0 font-bold">2</div>
+                <div class="w-5 h-5 rounded-full bg-white/[0.08] text-white flex items-center justify-center shrink-0 font-semibold text-[10px]">2</div>
                 <div>
-                  <strong class="text-white block">Chancen in Ihrer Region</strong>
-                  Wir prüfen, wie viele Menschen in Ihrer Stadt nach Ihren Leistungen suchen.
+                  <strong class="text-white block">Regionales Potenzial</strong>
+                  Wie viele Menschen suchen in Ihrer Region nach Ihren Leistungen?
                 </div>
               </div>
               <div class="flex items-start gap-3">
-                <div class="w-6 h-6 rounded-full bg-indigo-500/20 text-indigo-300 flex items-center justify-center shrink-0 font-bold">3</div>
+                <div class="w-5 h-5 rounded-full bg-white/[0.08] text-white flex items-center justify-center shrink-0 font-semibold text-[10px]">3</div>
                 <div>
                   <strong class="text-white block">Konkrete Empfehlung</strong>
-                  Wir sagen Ihnen ehrlich, welches Modell für Sie Sinn macht (oder ob nicht).
+                  Wir sagen Ihnen ehrlich, welches Modell für Sie Sinn macht.
                 </div>
               </div>
             </div>
 
-            <div class="mt-6 pt-6 border-t border-white/10 text-xs text-slate-400 space-y-2.5">
+            <div class="mt-6 pt-5 border-t border-white/[0.08] text-xs text-neutral-400 space-y-2">
               <div class="flex items-center gap-2">
-                <i data-lucide="clock" class="w-4 h-4 text-accent-cyan"></i>
-                <span>Dauer: <strong>30 Minuten</strong> (Telefon oder Video)</span>
+                <i data-lucide="clock" class="w-3.5 h-3.5 text-neutral-400"></i>
+                <span>Dauer: <strong>30 Minuten</strong></span>
               </div>
               <div class="flex items-center gap-2">
-                <i data-lucide="badge-percent" class="w-4 h-4 text-emerald-400"></i>
-                <span>Kosten: <strong>0 € (komplett kostenlos)</strong></span>
-              </div>
-              <div class="flex items-center gap-2">
-                <i data-lucide="shield-check" class="w-4 h-4 text-accent-indigo"></i>
+                <i data-lucide="shield-check" class="w-3.5 h-3.5 text-neutral-400"></i>
                 <span>Kein Verkaufsdruck, garantiert</span>
               </div>
             </div>
           </div>
 
-          <!-- Trust Box -->
-          <div class="glass-card rounded-2xl p-5 border-white/10 flex items-center gap-4">
-            <div class="w-12 h-12 rounded-xl bg-gradient-to-tr from-accent-indigo to-accent-violet flex items-center justify-center text-white font-bold text-lg shrink-0">
+          <div class="minimal-card rounded-2xl p-5 flex items-center gap-4">
+            <div class="w-11 h-11 rounded-xl bg-white/[0.05] border border-white/10 flex items-center justify-center text-white font-bold text-xs shrink-0">
               MS & EA
             </div>
             <div class="text-xs">
-              <div class="text-white font-bold">Direkt mit Marlon oder Elias</div>
-              <div class="text-slate-400 mt-0.5">Wir sprechen persönlich mit Ihnen – ohne Zwischenhändler.</div>
+              <div class="text-white font-semibold">Direkt mit den Gründern</div>
+              <div class="text-neutral-400 mt-0.5 text-[11px]">Marlon Staatz & Elias Ambrosius persönlich.</div>
             </div>
           </div>
         </div>
 
         <!-- Right: Interactive Calendar & Slot Picker -->
         <div class="lg:col-span-8">
-          <div class="glass-card rounded-3xl p-6 sm:p-8 border-white/10 shadow-glow-sm" id="bookingCard">
+          <div class="minimal-card rounded-2xl p-6 sm:p-8" id="bookingCard">
             
             <!-- STEP 1: Select Expert -->
             <div class="mb-8">
-              <label class="block text-xs font-bold uppercase tracking-wider text-slate-400 mb-3">1. Mit wem möchten Sie sprechen?</label>
+              <label class="block text-xs font-mono uppercase tracking-wider text-neutral-500 mb-3">1. Mit wem möchten Sie sprechen?</label>
               <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
-                <div onclick="selectExpert('Marlon & Elias', this)" class="expert-card active cursor-pointer p-4 rounded-2xl border border-white/10 transition-all">
-                  <div class="flex items-center justify-between mb-2">
-                    <span class="text-xs font-bold text-white">Marlon & Elias</span>
-                    <i data-lucide="users" class="w-4 h-4 text-accent-indigo"></i>
+                <div onclick="selectExpert('Marlon & Elias', this)" class="expert-card active cursor-pointer p-4 rounded-xl border border-white/10 transition-all">
+                  <div class="flex items-center justify-between mb-1.5">
+                    <span class="text-xs font-semibold text-white">Marlon & Elias</span>
+                    <i data-lucide="users" class="w-3.5 h-3.5 text-neutral-400"></i>
                   </div>
-                  <p class="text-[11px] text-slate-400">Beide Gründer (Website & Werbung)</p>
+                  <p class="text-[11px] text-neutral-400">Beide Gründer (Website & Werbung)</p>
                 </div>
-                <div onclick="selectExpert('Marlon Staatz', this)" class="expert-card cursor-pointer p-4 rounded-2xl border border-white/10 transition-all">
-                  <div class="flex items-center justify-between mb-2">
-                    <span class="text-xs font-bold text-white">Marlon Staatz</span>
-                    <i data-lucide="target" class="w-4 h-4 text-accent-cyan"></i>
+                <div onclick="selectExpert('Marlon Staatz', this)" class="expert-card cursor-pointer p-4 rounded-xl border border-white/10 transition-all">
+                  <div class="flex items-center justify-between mb-1.5">
+                    <span class="text-xs font-semibold text-white">Marlon Staatz</span>
+                    <i data-lucide="target" class="w-3.5 h-3.5 text-neutral-400"></i>
                   </div>
-                  <p class="text-[11px] text-slate-400">Fokus: Werbung & neue Kunden</p>
+                  <p class="text-[11px] text-neutral-400">Fokus: Werbung & Neukunden</p>
                 </div>
-                <div onclick="selectExpert('Elias Ambrosius', this)" class="expert-card cursor-pointer p-4 rounded-2xl border border-white/10 transition-all">
-                  <div class="flex items-center justify-between mb-2">
-                    <span class="text-xs font-bold text-white">Elias Ambrosius</span>
-                    <i data-lucide="sparkles" class="w-4 h-4 text-accent-violet"></i>
+                <div onclick="selectExpert('Elias Ambrosius', this)" class="expert-card cursor-pointer p-4 rounded-xl border border-white/10 transition-all">
+                  <div class="flex items-center justify-between mb-1.5">
+                    <span class="text-xs font-semibold text-white">Elias Ambrosius</span>
+                    <i data-lucide="layout" class="w-3.5 h-3.5 text-neutral-400"></i>
                   </div>
-                  <p class="text-[11px] text-slate-400">Fokus: Website, Design & Technik</p>
+                  <p class="text-[11px] text-neutral-400">Fokus: Website, Design & Technik</p>
                 </div>
               </div>
             </div>
 
             <!-- STEP 2: Date & Time Picker -->
             <div class="mb-8">
-              <label class="block text-xs font-bold uppercase tracking-wider text-slate-400 mb-3">2. Tag & Uhrzeit wählen</label>
+              <label class="block text-xs font-mono uppercase tracking-wider text-neutral-500 mb-3">2. Tag & Uhrzeit wählen</label>
               
               <div class="grid grid-cols-2 sm:grid-cols-5 gap-2.5 mb-5" id="dateTabsContainer"></div>
 
-              <label class="block text-xs font-medium text-slate-400 mb-2">Verfügbare Uhrzeiten:</label>
+              <label class="block text-xs font-medium text-neutral-400 mb-2">Verfügbare Uhrzeiten:</label>
               <div class="grid grid-cols-3 sm:grid-cols-4 gap-2.5" id="slotsContainer">
-                <button type="button" onclick="selectSlot('09:30 Uhr', this)" class="slot-btn py-2.5 px-3 rounded-xl border border-white/10 bg-obsidian-surface text-xs font-semibold text-slate-200 hover:border-slate-400 transition-all">09:30 Uhr</button>
-                <button type="button" onclick="selectSlot('11:00 Uhr', this)" class="slot-btn active py-2.5 px-3 rounded-xl border border-accent-indigo bg-accent-indigo text-xs font-semibold text-white transition-all">11:00 Uhr</button>
-                <button type="button" onclick="selectSlot('13:30 Uhr', this)" class="slot-btn py-2.5 px-3 rounded-xl border border-white/10 bg-obsidian-surface text-xs font-semibold text-slate-200 hover:border-slate-400 transition-all">13:30 Uhr</button>
-                <button type="button" onclick="selectSlot('15:00 Uhr', this)" class="slot-btn py-2.5 px-3 rounded-xl border border-white/10 bg-obsidian-surface text-xs font-semibold text-slate-200 hover:border-slate-400 transition-all">15:00 Uhr</button>
-                <button type="button" onclick="selectSlot('16:30 Uhr', this)" class="slot-btn py-2.5 px-3 rounded-xl border border-white/10 bg-obsidian-surface text-xs font-semibold text-slate-200 hover:border-slate-400 transition-all">16:30 Uhr</button>
-                <button type="button" onclick="selectSlot('18:00 Uhr', this)" class="slot-btn py-2.5 px-3 rounded-xl border border-white/10 bg-obsidian-surface text-xs font-semibold text-slate-200 hover:border-slate-400 transition-all">18:00 Uhr</button>
+                <button type="button" onclick="selectSlot('09:30 Uhr', this)" class="slot-btn py-2.5 px-3 rounded-xl border border-white/10 bg-white/[0.02] text-xs font-medium text-neutral-300 hover:border-white/20 transition-all">09:30 Uhr</button>
+                <button type="button" onclick="selectSlot('11:00 Uhr', this)" class="slot-btn active py-2.5 px-3 rounded-xl border border-white bg-white text-xs font-semibold text-black transition-all">11:00 Uhr</button>
+                <button type="button" onclick="selectSlot('13:30 Uhr', this)" class="slot-btn py-2.5 px-3 rounded-xl border border-white/10 bg-white/[0.02] text-xs font-medium text-neutral-300 hover:border-white/20 transition-all">13:30 Uhr</button>
+                <button type="button" onclick="selectSlot('15:00 Uhr', this)" class="slot-btn py-2.5 px-3 rounded-xl border border-white/10 bg-white/[0.02] text-xs font-medium text-neutral-300 hover:border-white/20 transition-all">15:00 Uhr</button>
+                <button type="button" onclick="selectSlot('16:30 Uhr', this)" class="slot-btn py-2.5 px-3 rounded-xl border border-white/10 bg-white/[0.02] text-xs font-medium text-neutral-300 hover:border-white/20 transition-all">16:30 Uhr</button>
+                <button type="button" onclick="selectSlot('18:00 Uhr', this)" class="slot-btn py-2.5 px-3 rounded-xl border border-white/10 bg-white/[0.02] text-xs font-medium text-neutral-300 hover:border-white/20 transition-all">18:00 Uhr</button>
               </div>
             </div>
 
             <!-- STEP 3: Form Details -->
             <form id="bookingForm" onsubmit="submitBooking(event)" class="space-y-4">
-              <label class="block text-xs font-bold uppercase tracking-wider text-slate-400 mb-1">3. Ihre Kontaktdaten</label>
+              <label class="block text-xs font-mono uppercase tracking-wider text-neutral-500 mb-1">3. Ihre Kontaktdaten</label>
               
-              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
                 <div>
                   <input type="text" id="bName" required placeholder="Ihr Name *" 
-                         class="w-full px-4 py-3 rounded-xl bg-obsidian-surface border border-white/10 text-white placeholder-slate-500 text-xs focus:outline-none focus:border-accent-indigo">
+                         class="w-full px-4 py-3 rounded-xl bg-white/[0.03] border border-white/10 text-white placeholder-neutral-500 text-xs focus:outline-none focus:border-white/30">
                 </div>
                 <div>
                   <input type="email" id="bEmail" required placeholder="Ihre E-Mail-Adresse *" 
-                         class="w-full px-4 py-3 rounded-xl bg-obsidian-surface border border-white/10 text-white placeholder-slate-500 text-xs focus:outline-none focus:border-accent-indigo">
+                         class="w-full px-4 py-3 rounded-xl bg-white/[0.03] border border-white/10 text-white placeholder-neutral-500 text-xs focus:outline-none focus:border-white/30">
                 </div>
               </div>
 
-              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
                 <div>
                   <input type="text" id="bCompany" required placeholder="Name Ihres Unternehmens *" 
-                         class="w-full px-4 py-3 rounded-xl bg-obsidian-surface border border-white/10 text-white placeholder-slate-500 text-xs focus:outline-none focus:border-accent-indigo">
+                         class="w-full px-4 py-3 rounded-xl bg-white/[0.03] border border-white/10 text-white placeholder-neutral-500 text-xs focus:outline-none focus:border-white/30">
                 </div>
                 <div>
-                  <input type="tel" id="bPhone" required placeholder="Telefonnummer für den Rückruf *" 
-                         class="w-full px-4 py-3 rounded-xl bg-obsidian-surface border border-white/10 text-white placeholder-slate-500 text-xs focus:outline-none focus:border-accent-indigo">
+                  <input type="tel" id="bPhone" required placeholder="Telefonnummer für Rückruf *" 
+                         class="w-full px-4 py-3 rounded-xl bg-white/[0.03] border border-white/10 text-white placeholder-neutral-500 text-xs focus:outline-none focus:border-white/30">
                 </div>
               </div>
 
               <div>
-                <select id="bInterest" class="w-full px-4 py-3 rounded-xl bg-obsidian-surface border border-white/10 text-white text-xs focus:outline-none focus:border-accent-indigo">
+                <select id="bInterest" class="w-full px-4 py-3 rounded-xl bg-[#12131A] border border-white/10 text-white text-xs focus:outline-none focus:border-white/30">
                   <option value="Allgemeines Kennenlernen">Worum geht es vor allem? Allgemeine Beratung</option>
                   <option value="Essential (390 €/Monat)">Interesse an: Essential (390 €/mtl. - Neue Website & Hosting)</option>
                   <option value="Growth Engine (890 €/Monat)">Interesse an: Growth Engine (890 €/mtl. - Website + Werbung)</option>
@@ -265,10 +240,10 @@
 
               <div>
                 <textarea id="bNotes" rows="2" placeholder="Optionale Nachricht: Was ist aktuell Ihre größte Herausforderung?" 
-                          class="w-full px-4 py-3 rounded-xl bg-obsidian-surface border border-white/10 text-white placeholder-slate-500 text-xs focus:outline-none focus:border-accent-indigo"></textarea>
+                          class="w-full px-4 py-3 rounded-xl bg-white/[0.03] border border-white/10 text-white placeholder-neutral-500 text-xs focus:outline-none focus:border-white/30"></textarea>
               </div>
 
-              <button type="submit" id="bookSubmitBtn" class="w-full py-4 rounded-xl bg-gradient-to-r from-accent-indigo via-indigo-600 to-accent-violet text-white font-bold text-sm shadow-glow-md hover:scale-[1.01] active:scale-[0.99] transition-all flex items-center justify-center gap-2">
+              <button type="submit" id="bookSubmitBtn" class="w-full py-3.5 rounded-xl bg-white text-black font-semibold text-xs hover:bg-neutral-200 transition-colors flex items-center justify-center gap-2">
                 <span>Termin jetzt kostenlos reservieren</span>
                 <i data-lucide="check" class="w-4 h-4"></i>
               </button>
@@ -276,23 +251,23 @@
 
             <!-- Success Confirmation Screen -->
             <div id="bookingConfirmation" class="hidden text-center py-8">
-              <div class="w-16 h-16 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center mx-auto mb-4">
-                <i data-lucide="calendar-check" class="w-8 h-8"></i>
+              <div class="w-14 h-14 rounded-full bg-white/[0.06] border border-white/10 text-white flex items-center justify-center mx-auto mb-4">
+                <i data-lucide="check" class="w-6 h-6"></i>
               </div>
-              <h3 class="text-2xl font-extrabold text-white">Ihr Termin steht fest!</h3>
-              <p class="text-sm text-slate-300 mt-2 max-w-md mx-auto" id="confirmSummary">
+              <h3 class="text-xl font-bold text-white">Ihr Termin steht fest!</h3>
+              <p class="text-xs text-neutral-400 mt-2 max-w-md mx-auto" id="confirmSummary">
                 Vielen Dank! Wir haben Ihren Termin eingetragen und melden uns pünktlich bei Ihnen. Eine kurze Bestätigung haben wir Ihnen per E-Mail geschickt.
               </p>
               
-              <div class="mt-6 p-4 rounded-2xl bg-obsidian-surface border border-white/10 max-w-sm mx-auto text-xs text-left space-y-2">
-                <div class="text-slate-400">Ansprechpartner: <strong class="text-white" id="cExpert">Marlon & Elias</strong></div>
-                <div class="text-slate-400">Datum: <strong class="text-white" id="cDate">Morgen</strong></div>
-                <div class="text-slate-400">Uhrzeit: <strong class="text-white" id="cTime">11:00 Uhr</strong></div>
-                <div class="text-slate-400">Ablauf: <strong class="text-accent-cyan">Wir rufen Sie an oder treffen uns online</strong></div>
+              <div class="mt-6 p-4 rounded-xl bg-white/[0.02] border border-white/[0.08] max-w-sm mx-auto text-xs text-left space-y-2">
+                <div class="text-neutral-400">Ansprechpartner: <strong class="text-white" id="cExpert">Marlon & Elias</strong></div>
+                <div class="text-neutral-400">Datum: <strong class="text-white" id="cDate">Morgen</strong></div>
+                <div class="text-neutral-400">Uhrzeit: <strong class="text-white" id="cTime">11:00 Uhr</strong></div>
+                <div class="text-neutral-400">Ablauf: <strong class="text-white">Wir rufen Sie an oder treffen uns online</strong></div>
               </div>
 
-              <div class="mt-8 flex justify-center gap-4">
-                <a href="index.html" class="px-6 py-2.5 rounded-xl bg-white/10 hover:bg-white/20 text-xs font-semibold text-white">
+              <div class="mt-6 flex justify-center">
+                <a href="index.html" class="px-5 py-2.5 rounded-xl border border-white/10 text-xs font-medium text-white hover:bg-white/[0.06]">
                   Zurück zur Startseite
                 </a>
               </div>
@@ -307,20 +282,20 @@
   </main>
 
   <!-- FOOTER -->
-  <footer class="border-t border-white/10 bg-obsidian-deep py-12">
+  <footer class="border-t border-white/[0.08] bg-[#060709] py-12">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex flex-col md:flex-row items-center justify-between gap-6">
         <div class="flex items-center gap-3">
           <img src="assets/logo-white.png" alt="EMPACT STUDIO" class="h-9 sm:h-10 w-auto object-contain">
-          <span class="text-xs text-slate-400">| Marlon Staatz & Elias Ambrosius GbR</span>
+          <span class="text-xs text-neutral-500">| Marlon Staatz & Elias Ambrosius GbR</span>
         </div>
-        <div class="flex items-center gap-6 text-xs text-slate-400">
-          <a href="leistungen.html" class="hover:text-white">Leistungen</a>
-          <a href="preise.html" class="hover:text-white">Preise & Pakete</a>
-          <a href="ueber-uns.html" class="hover:text-white">Über uns</a>
-          <a href="kontakt.html" class="hover:text-white">Kontakt</a>
-          <a href="impressum.html" class="hover:text-white">Impressum</a>
-          <a href="datenschutz.html" class="hover:text-white">Datenschutz</a>
+        <div class="flex items-center gap-6 text-xs text-neutral-400">
+          <a href="leistungen.html" class="hover:text-white transition-colors">Leistungen</a>
+          <a href="preise.html" class="hover:text-white transition-colors">Preise & Pakete</a>
+          <a href="ueber-uns.html" class="hover:text-white transition-colors">Über uns</a>
+          <a href="kontakt.html" class="hover:text-white transition-colors">Kontakt</a>
+          <a href="impressum.html" class="hover:text-neutral-300 transition-colors">Impressum</a>
+          <a href="datenschutz.html" class="hover:text-neutral-300 transition-colors">Datenschutz</a>
         </div>
       </div>
     </div>
@@ -346,11 +321,11 @@
     function selectSlot(slot, el) {
       selectedSlot = slot;
       document.querySelectorAll('.slot-btn').forEach(b => {
-        b.classList.remove('active', 'bg-accent-indigo', 'text-white', 'border-accent-indigo');
-        b.classList.add('bg-obsidian-surface', 'border-white/10', 'text-slate-200');
+        b.classList.remove('active');
+        b.classList.add('bg-white/[0.02]', 'border-white/10', 'text-neutral-300');
       });
-      el.classList.add('active', 'bg-accent-indigo', 'text-white', 'border-accent-indigo');
-      el.classList.remove('bg-obsidian-surface', 'border-white/10', 'text-slate-200');
+      el.classList.add('active');
+      el.classList.remove('bg-white/[0.02]', 'border-white/10', 'text-neutral-300');
     }
 
     const dateContainer = document.getElementById('dateTabsContainer');
@@ -371,16 +346,20 @@
 
         const btn = document.createElement('button');
         btn.type = 'button';
-        btn.className = `date-tab-btn p-3 rounded-2xl border text-center transition-all ${count === 0 ? 'bg-indigo-600/30 border-accent-indigo text-white' : 'border-white/10 bg-obsidian-surface text-slate-400 hover:border-slate-500'}`;
-        btn.innerHTML = `<span class="block text-[10px] uppercase font-bold text-slate-400">${dayName}</span><span class="block text-sm font-extrabold text-white mt-0.5">${dayNum}. ${monthName}</span>`;
+        btn.className = `date-tab-btn p-3 rounded-xl border text-center transition-all ${count === 0 ? 'bg-white text-black border-white' : 'border-white/10 bg-white/[0.02] text-neutral-400 hover:border-white/20'}`;
+        btn.innerHTML = `<span class="block text-[10px] uppercase font-mono ${count === 0 ? 'text-neutral-600' : 'text-neutral-500'}">${dayName}</span><span class="block text-xs font-bold ${count === 0 ? 'text-black' : 'text-white'} mt-0.5">${dayNum}. ${monthName}</span>`;
         btn.onclick = function() {
           selectedDate = dateStr;
           document.querySelectorAll('.date-tab-btn').forEach(b => {
-            b.classList.remove('bg-indigo-600/30', 'border-accent-indigo', 'text-white');
-            b.classList.add('border-white/10', 'bg-obsidian-surface', 'text-slate-400');
+            b.className = 'date-tab-btn p-3 rounded-xl border border-white/10 bg-white/[0.02] text-neutral-400 hover:border-white/20 text-center transition-all';
+            const spans = b.querySelectorAll('span');
+            if (spans[0]) spans[0].className = 'block text-[10px] uppercase font-mono text-neutral-500';
+            if (spans[1]) spans[1].className = 'block text-xs font-bold text-white mt-0.5';
           });
-          btn.classList.add('bg-indigo-600/30', 'border-accent-indigo', 'text-white');
-          btn.classList.remove('border-white/10', 'bg-obsidian-surface', 'text-slate-400');
+          btn.className = 'date-tab-btn p-3 rounded-xl border border-white bg-white text-black text-center transition-all';
+          const spans = btn.querySelectorAll('span');
+          if (spans[0]) spans[0].className = 'block text-[10px] uppercase font-mono text-neutral-600';
+          if (spans[1]) spans[1].className = 'block text-xs font-bold text-black mt-0.5';
         };
         dateContainer.appendChild(btn);
         count++;
@@ -400,7 +379,7 @@
         document.getElementById('cDate').textContent = selectedDate;
         document.getElementById('cTime').textContent = selectedSlot;
         lucide.createIcons();
-      }, 700);
+      }, 600);
     }
   </script>
 </body>

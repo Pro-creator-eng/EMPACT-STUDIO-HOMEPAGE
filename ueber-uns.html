@@ -6,7 +6,7 @@
   <title>Über uns & Die Gründer | EMPACT STUDIO</title>
   <meta name="description" content="Lernen Sie Marlon Staatz & Elias Ambrosius kennen. Wer wir sind, warum wir EMPACT STUDIO gegründet haben und wie wir mit Ihnen zusammenarbeiten.">
   
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='24' fill='%230B0C10'/><path d='M30 25h40v12H44v13h22v12H44v13h26v12H30z' fill='%236366F1'/></svg>">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='24' fill='%2308090C'/><path d='M30 25h40v12H44v13h22v12H44v13h26v12H30z' fill='%23FFFFFF'/></svg>">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -18,26 +18,14 @@
         extend: {
           colors: {
             obsidian: {
-              DEFAULT: '#0B0C10',
+              DEFAULT: '#090A0D',
               deep: '#060709',
-              card: 'rgba(18, 22, 31, 0.75)',
-              surface: '#121620',
-              border: 'rgba(255, 255, 255, 0.08)',
-              hover: 'rgba(255, 255, 255, 0.14)'
-            },
-            accent: {
-              indigo: '#6366F1',
-              violet: '#8B5CF6',
-              cyan: '#38BDF8',
-              glow: 'rgba(99, 102, 241, 0.25)'
+              card: '#0F1015',
+              surface: '#13141A',
             }
           },
           fontFamily: {
             sans: ['"Plus Jakarta Sans"', 'system-ui', '-apple-system', 'sans-serif'],
-          },
-          boxShadow: {
-            'glow-sm': '0 0 20px -5px rgba(99, 102, 241, 0.3)',
-            'glass': '0 8px 32px 0 rgba(0, 0, 0, 0.37)'
           }
         }
       }
@@ -45,53 +33,47 @@
   </script>
   <script src="https://unpkg.com/lucide@latest"></script>
   <style>
-    body { background-color: #0B0C10; color: #F8FAFC; font-family: 'Plus Jakarta Sans', sans-serif; overflow-x: hidden; }
-    .glass-nav { background: rgba(11, 12, 16, 0.85); backdrop-filter: blur(20px); border-bottom: 1px solid rgba(255, 255, 255, 0.08); }
-    .glass-card { background: rgba(16, 20, 29, 0.7); backdrop-filter: blur(16px); border: 1px solid rgba(255, 255, 255, 0.08); }
-    .badge-gradient { background: linear-gradient(135deg, rgba(99, 102, 241, 0.15) 0%, rgba(139, 92, 246, 0.15) 100%); border: 1px solid rgba(99, 102, 241, 0.3); }
+    body { background-color: #090A0D; color: #F4F4F6; font-family: 'Plus Jakarta Sans', sans-serif; overflow-x: hidden; letter-spacing: -0.01em; }
+    .glass-nav { background: rgba(10, 11, 15, 0.82); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border: 1px solid rgba(255, 255, 255, 0.07); }
+    .minimal-card { background: rgba(15, 16, 21, 0.7); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border: 1px solid rgba(255, 255, 255, 0.07); transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1); }
+    .minimal-card:hover { border-color: rgba(255, 255, 255, 0.18); transform: translateY(-3px); }
   </style>
 </head>
-<body class="selection:bg-accent-indigo selection:text-white">
-
-  <!-- Ambient Light -->
-  <div class="fixed inset-0 pointer-events-none -z-10 overflow-hidden">
-    <div class="absolute -top-40 left-1/2 -translate-x-1/2 w-[800px] h-[450px] bg-indigo-600/15 blur-[140px] rounded-full"></div>
-    <div class="absolute bottom-10 -left-32 w-[600px] h-[500px] bg-violet-600/10 blur-[160px] rounded-full"></div>
-  </div>
+<body class="selection:bg-white selection:text-black">
 
   <!-- NAVIGATION -->
   <header class="fixed top-0 left-0 right-0 z-50">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-4">
-      <nav class="glass-nav rounded-2xl px-5 py-3.5 flex items-center justify-between border border-white/10 shadow-glass">
+      <nav class="glass-nav rounded-2xl px-5 sm:px-6 py-3 flex items-center justify-between shadow-2xl">
         <a href="index.html" class="flex items-center group py-0.5">
-          <img src="assets/logo-white.png" alt="EMPACT STUDIO Logo" class="h-12 sm:h-14 lg:h-16 w-auto object-contain group-hover:scale-105 transition-transform duration-300">
+          <img src="assets/logo-white.png" alt="EMPACT STUDIO Logo" class="h-12 sm:h-14 lg:h-16 w-auto object-contain group-hover:opacity-90 transition-opacity">
         </a>
-        <div class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-300">
+        <div class="hidden md:flex items-center gap-8 text-sm font-medium text-neutral-400">
           <a href="index.html" class="hover:text-white transition-colors">Startseite</a>
           <a href="leistungen.html" class="hover:text-white transition-colors">Leistungen</a>
           <a href="preise.html" class="hover:text-white transition-colors">Preise & Pakete</a>
-          <a href="ueber-uns.html" class="text-indigo-400 font-semibold">Über uns</a>
+          <a href="ueber-uns.html" class="text-white font-medium">Über uns</a>
           <a href="kontakt.html" class="hover:text-white transition-colors">Kontakt</a>
         </div>
         <div class="hidden md:flex items-center gap-3">
-          <a href="buchen.html" class="px-5 py-2.5 rounded-xl bg-accent-indigo text-white text-sm font-semibold shadow-glow-sm flex items-center gap-2">
-            <i data-lucide="calendar" class="w-4 h-4"></i>
+          <a href="buchen.html" class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-white text-black text-xs font-semibold tracking-wide hover:bg-neutral-200 transition-all duration-200">
+            <i data-lucide="calendar" class="w-3.5 h-3.5"></i>
             <span>Erstgespräch buchen</span>
           </a>
         </div>
-        <button id="mobileMenuBtn" aria-label="Menü" class="md:hidden p-2 text-slate-300">
+        <button id="mobileMenuBtn" aria-label="Menü" class="md:hidden p-2 text-neutral-400 hover:text-white focus:outline-none">
           <i data-lucide="menu" class="w-6 h-6"></i>
         </button>
       </nav>
     </div>
     <div id="mobileMenu" class="hidden md:hidden max-w-7xl mx-auto px-4 mt-2">
       <div class="glass-nav rounded-2xl p-6 border border-white/10 flex flex-col gap-4 text-center">
-        <a href="index.html" class="text-slate-200 py-2">Startseite</a>
-        <a href="leistungen.html" class="text-slate-200 py-2">Leistungen</a>
-        <a href="preise.html" class="text-slate-200 py-2">Preise & Pakete</a>
-        <a href="ueber-uns.html" class="text-indigo-400 font-semibold py-2">Über uns</a>
-        <a href="kontakt.html" class="text-slate-200 py-2">Kontakt</a>
-        <a href="buchen.html" class="py-3 rounded-xl bg-accent-indigo text-white font-semibold">Erstgespräch buchen</a>
+        <a href="index.html" class="text-neutral-300 py-2">Startseite</a>
+        <a href="leistungen.html" class="text-neutral-300 py-2">Leistungen</a>
+        <a href="preise.html" class="text-neutral-300 py-2">Preise & Pakete</a>
+        <a href="ueber-uns.html" class="text-white font-semibold py-2">Über uns</a>
+        <a href="kontakt.html" class="text-neutral-300 py-2">Kontakt</a>
+        <a href="buchen.html" class="py-3 rounded-xl bg-white text-black font-semibold text-xs">Erstgespräch buchen</a>
       </div>
     </div>
   </header>
@@ -101,38 +83,34 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
       <!-- Headline -->
-      <div class="text-center max-w-3xl mx-auto mb-20">
-        <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full badge-gradient text-xs font-semibold text-indigo-300 uppercase tracking-wider mb-4">
-          Die Gesichter hinter EMPACT
-        </div>
-        <h1 class="text-4xl sm:text-6xl font-extrabold text-white tracking-tight">
-          Wir sprechen Ihre Sprache. <br>Ohne Agentur-Geschwätz.
+      <div class="text-center max-w-2xl mx-auto mb-20">
+        <span class="text-xs font-mono text-neutral-500 uppercase tracking-widest block mb-2">Die Köpfe hinter EMPACT</span>
+        <h1 class="text-3xl sm:text-5xl font-bold text-white tracking-tight">
+          Wir sprechen Ihre Sprache. Ohne Agentur-Geschwätz.
         </h1>
-        <p class="mt-5 text-slate-400 text-base sm:text-lg">
-          Wir sind Marlon Staatz und Elias Ambrosius. Zwei junge Gründer, die etwas anpacken wollen. Wir helfen regionalen Betrieben und KMUs dabei, online genau so gut wahrgenommen zu werden wie in der echten Welt.
+        <p class="mt-4 text-neutral-400 text-sm sm:text-base leading-relaxed">
+          Wir sind Marlon Staatz und Elias Ambrosius. Zwei Gründer, die anpacken wollen. Wir helfen regionalen Betrieben und KMUs dabei, online genau so gut wahrgenommen zu werden wie in der echten Welt.
         </p>
       </div>
 
-      <!-- DETAILED FOUNDERS CARDS -->
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-20">
+      <!-- FOUNDERS CARDS -->
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-20 max-w-5xl mx-auto">
         
         <!-- MARLON STAATZ -->
-        <div class="glass-card rounded-3xl p-8 sm:p-10 border-white/10 relative overflow-hidden flex flex-col justify-between">
-          <div class="absolute -top-12 -right-12 w-48 h-48 bg-indigo-600/10 rounded-full blur-3xl"></div>
-          
+        <div class="minimal-card rounded-2xl p-8 flex flex-col justify-between">
           <div>
-            <div class="flex items-center gap-5 mb-6">
-              <div class="w-20 h-20 rounded-2xl bg-gradient-to-tr from-indigo-900 via-indigo-700 to-slate-800 border-2 border-indigo-500/40 flex items-center justify-center text-2xl font-black text-white shadow-glow-sm">
+            <div class="flex items-center gap-4 mb-6">
+              <div class="w-14 h-14 rounded-xl bg-white/[0.05] border border-white/10 flex items-center justify-center text-lg font-bold text-white">
                 MS
               </div>
               <div>
-                <h2 class="text-2xl font-extrabold text-white">Marlon Staatz</h2>
-                <div class="text-xs font-bold text-accent-indigo uppercase tracking-wider mt-0.5">Gründer & Werbe-Spezialist</div>
-                <div class="text-xs text-slate-400 mt-1">Zuständig für Social Media Werbung & Kundenanfragen</div>
+                <h2 class="text-lg font-bold text-white">Marlon Staatz</h2>
+                <div class="text-xs text-neutral-400 mt-0.5">Gründer & Werbe-Spezialist</div>
+                <div class="text-[11px] text-neutral-500 mt-0.5">Zuständig für Social Media Werbung & Kundenanfragen</div>
               </div>
             </div>
 
-            <div class="space-y-4 text-xs text-slate-300 leading-relaxed">
+            <div class="space-y-3.5 text-xs text-neutral-300 leading-relaxed">
               <p>
                 „Werbung im Internet ist keine Zauberei, sondern gesunder Menschenverstand und Fleiß. Man muss genau verstehen, was die Menschen in der Region brauchen, und ihnen ein klares, sympathisches Angebot machen.“
               </p>
@@ -141,21 +119,21 @@
               </p>
             </div>
 
-            <div class="mt-6 pt-6 border-t border-white/10 space-y-2 text-xs text-slate-300">
+            <div class="mt-6 pt-5 border-t border-white/[0.07] space-y-2 text-xs text-neutral-400">
               <div class="flex items-center gap-2">
-                <i data-lucide="check" class="w-4 h-4 text-accent-cyan"></i>
+                <i data-lucide="check" class="w-3.5 h-3.5 text-neutral-400"></i>
                 <span>Fokus: Mehr Anrufe und Nachrichten von Neukunden</span>
               </div>
               <div class="flex items-center gap-2">
-                <i data-lucide="check" class="w-4 h-4 text-accent-cyan"></i>
+                <i data-lucide="check" class="w-3.5 h-3.5 text-neutral-400"></i>
                 <span>Tägliche Kontrolle Ihrer Werbeausgaben</span>
               </div>
             </div>
           </div>
 
-          <div class="mt-8 pt-6 border-t border-white/10 flex items-center justify-between">
-            <span class="text-xs text-slate-400">Verfügbar für ein kurzes Gespräch</span>
-            <a href="buchen.html" class="px-4 py-2 rounded-xl bg-white/10 hover:bg-white/20 text-white text-xs font-semibold flex items-center gap-1.5 transition-colors">
+          <div class="mt-8 pt-5 border-t border-white/[0.07] flex items-center justify-between text-xs">
+            <span class="text-neutral-500">Verfügbar für ein kurzes Gespräch</span>
+            <a href="buchen.html" class="text-white hover:text-neutral-300 font-medium flex items-center gap-1.5 transition-colors">
               <span>Termin mit Marlon</span>
               <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
             </a>
@@ -163,22 +141,20 @@
         </div>
 
         <!-- ELIAS AMBROSIUS -->
-        <div class="glass-card rounded-3xl p-8 sm:p-10 border-white/10 relative overflow-hidden flex flex-col justify-between">
-          <div class="absolute -top-12 -right-12 w-48 h-48 bg-violet-600/10 rounded-full blur-3xl"></div>
-          
+        <div class="minimal-card rounded-2xl p-8 flex flex-col justify-between">
           <div>
-            <div class="flex items-center gap-5 mb-6">
-              <div class="w-20 h-20 rounded-2xl bg-gradient-to-tr from-violet-900 via-violet-700 to-slate-800 border-2 border-violet-500/40 flex items-center justify-center text-2xl font-black text-white shadow-glow-sm">
+            <div class="flex items-center gap-4 mb-6">
+              <div class="w-14 h-14 rounded-xl bg-white/[0.05] border border-white/10 flex items-center justify-center text-lg font-bold text-white">
                 EA
               </div>
               <div>
-                <h2 class="text-2xl font-extrabold text-white">Elias Ambrosius</h2>
-                <div class="text-xs font-bold text-accent-violet uppercase tracking-wider mt-0.5">Gründer & Webdesigner</div>
-                <div class="text-xs text-slate-400 mt-1">Zuständig für Websites, Design & Technik</div>
+                <h2 class="text-lg font-bold text-white">Elias Ambrosius</h2>
+                <div class="text-xs text-neutral-400 mt-0.5">Gründer & Webdesigner</div>
+                <div class="text-[11px] text-neutral-500 mt-0.5">Zuständig für Websites, Design & Technik</div>
               </div>
             </div>
 
-            <div class="space-y-4 text-xs text-slate-300 leading-relaxed">
+            <div class="space-y-3.5 text-xs text-neutral-300 leading-relaxed">
               <p>
                 „Es ärgert mich, wenn hervorragende Handwerker oder Dienstleister eine Website haben, die auf dem Smartphone kaum zu bedienen ist. Eine Website muss modern, einfach und schnell sein. Der Kunde muss innerhalb von Sekunden verstehen, warum er bei Ihnen anrufen sollte.“
               </p>
@@ -187,21 +163,21 @@
               </p>
             </div>
 
-            <div class="mt-6 pt-6 border-t border-white/10 space-y-2 text-xs text-slate-300">
+            <div class="mt-6 pt-5 border-t border-white/[0.07] space-y-2 text-xs text-neutral-400">
               <div class="flex items-center gap-2">
-                <i data-lucide="check" class="w-4 h-4 text-accent-violet"></i>
+                <i data-lucide="check" class="w-3.5 h-3.5 text-neutral-400"></i>
                 <span>Fokus: Moderne Websites, die auf jedem Handy funktionieren</span>
               </div>
               <div class="flex items-center gap-2">
-                <i data-lucide="check" class="w-4 h-4 text-accent-violet"></i>
+                <i data-lucide="check" class="w-3.5 h-3.5 text-neutral-400"></i>
                 <span>Sicherer Speicherplatz & persönliche Betreuung</span>
               </div>
             </div>
           </div>
 
-          <div class="mt-8 pt-6 border-t border-white/10 flex items-center justify-between">
-            <span class="text-xs text-slate-400">Verfügbar für ein kurzes Gespräch</span>
-            <a href="buchen.html" class="px-4 py-2 rounded-xl bg-white/10 hover:bg-white/20 text-white text-xs font-semibold flex items-center gap-1.5 transition-colors">
+          <div class="mt-8 pt-5 border-t border-white/[0.07] flex items-center justify-between text-xs">
+            <span class="text-neutral-500">Verfügbar für ein kurzes Gespräch</span>
+            <a href="buchen.html" class="text-white hover:text-neutral-300 font-medium flex items-center gap-1.5 transition-colors">
               <span>Termin mit Elias</span>
               <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
             </a>
@@ -210,57 +186,57 @@
 
       </div>
 
-      <!-- PHILOSOPHY & VALUES -->
-      <div class="glass-card rounded-3xl p-8 sm:p-12 border-white/10 mb-20">
-        <div class="max-w-3xl mx-auto text-center mb-12">
-          <h2 class="text-2xl sm:text-3xl font-extrabold text-white">Unsere 3 einfachen Versprechen</h2>
-          <p class="text-slate-400 text-xs sm:text-sm mt-2">Daran können Sie uns jederzeit messen.</p>
+      <!-- VALUES -->
+      <div class="minimal-card rounded-2xl p-8 sm:p-12 mb-20 max-w-4xl mx-auto">
+        <div class="text-center mb-10">
+          <span class="text-xs font-mono text-neutral-500 uppercase tracking-widest block mb-1">Unsere Werte</span>
+          <h2 class="text-2xl font-bold text-white">Unsere 3 einfachen Versprechen</h2>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center sm:text-left">
-          <div class="p-6 rounded-2xl bg-white/5 border border-white/5">
-            <div class="w-12 h-12 rounded-xl bg-indigo-500/20 text-accent-indigo flex items-center justify-center mb-4 mx-auto sm:mx-0">
-              <i data-lucide="message-circle" class="w-6 h-6"></i>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-left">
+          <div class="p-5 rounded-xl bg-white/[0.02] border border-white/[0.06]">
+            <div class="w-10 h-10 rounded-lg bg-white/[0.05] border border-white/10 flex items-center justify-center mb-3 text-white">
+              <i data-lucide="shield-check" class="w-5 h-5"></i>
             </div>
-            <h3 class="text-base font-bold text-white">Ehrlichkeit</h3>
-            <p class="text-xs text-slate-300 mt-2 leading-relaxed">
-              Wenn wir merken, dass eine Kampagne für Ihr Vorhaben keinen Sinn macht, sagen wir Ihnen das ganz direkt. Wir wollen zufriedene Partner, keine schnellen Abschlüsse.
+            <h3 class="text-sm font-bold text-white">Ehrlichkeit</h3>
+            <p class="text-xs text-neutral-400 mt-1.5 leading-relaxed">
+              Wenn wir merken, dass eine Werbemaßnahme für Ihr Vorhaben keinen Sinn macht, sagen wir Ihnen das ganz direkt.
             </p>
           </div>
 
-          <div class="p-6 rounded-2xl bg-white/5 border border-white/5">
-            <div class="w-12 h-12 rounded-xl bg-cyan-500/20 text-accent-cyan flex items-center justify-center mb-4 mx-auto sm:mx-0">
-              <i data-lucide="zap" class="w-6 h-6"></i>
+          <div class="p-5 rounded-xl bg-white/[0.02] border border-white/[0.06]">
+            <div class="w-10 h-10 rounded-lg bg-white/[0.05] border border-white/10 flex items-center justify-center mb-3 text-white">
+              <i data-lucide="zap" class="w-5 h-5"></i>
             </div>
-            <h3 class="text-base font-bold text-white">Schnelligkeit</h3>
-            <p class="text-xs text-slate-300 mt-2 leading-relaxed">
-              Wir brauchen keine Monate für eine Website. Innerhalb von 10 bis 14 Tagen steht Ihr neuer Auftritt. Und wenn Sie eine Frage haben, antworten wir innerhalb von 24 Stunden.
+            <h3 class="text-sm font-bold text-white">Schnelligkeit</h3>
+            <p class="text-xs text-neutral-400 mt-1.5 leading-relaxed">
+              Wir brauchen keine Monate für eine Website. Innerhalb von 10 bis 14 Tagen steht Ihr neuer Auftritt.
             </p>
           </div>
 
-          <div class="p-6 rounded-2xl bg-white/5 border border-white/5">
-            <div class="w-12 h-12 rounded-xl bg-violet-500/20 text-accent-violet flex items-center justify-center mb-4 mx-auto sm:mx-0">
-              <i data-lucide="users" class="w-6 h-6"></i>
+          <div class="p-5 rounded-xl bg-white/[0.02] border border-white/[0.06]">
+            <div class="w-10 h-10 rounded-lg bg-white/[0.05] border border-white/10 flex items-center justify-center mb-3 text-white">
+              <i data-lucide="users" class="w-5 h-5"></i>
             </div>
-            <h3 class="text-base font-bold text-white">Auf Augenhöhe</h3>
-            <p class="text-xs text-slate-300 mt-2 leading-relaxed">
-              Sie werden bei uns nicht von einem Praktikanten zum nächsten geschoben. Sie haben von Anfang an Marlon und Elias als feste persönliche Ansprechpartner.
+            <h3 class="text-sm font-bold text-white">Auf Augenhöhe</h3>
+            <p class="text-xs text-neutral-400 mt-1.5 leading-relaxed">
+              Sie sprechen immer direkt mit Marlon und Elias als feste persönliche Ansprechpartner.
             </p>
           </div>
         </div>
       </div>
 
-      <!-- CTA BANNER -->
-      <div class="text-center py-12 px-6 glass-card rounded-3xl border-indigo-500/30 max-w-4xl mx-auto">
-        <h2 class="text-2xl sm:text-3xl font-extrabold text-white">Lernen wir uns einfach kennen!</h2>
-        <p class="text-slate-300 text-xs sm:text-sm mt-3 max-w-xl mx-auto">
+      <!-- CTA -->
+      <div class="text-center py-10 px-6 minimal-card rounded-2xl max-w-3xl mx-auto border-white/15">
+        <h2 class="text-2xl font-bold text-white">Lernen wir uns einfach kennen!</h2>
+        <p class="text-neutral-400 text-xs sm:text-sm mt-2 max-w-md mx-auto">
           In 30 Minuten am Telefon oder per Video-Call. Unverbindlich, kostenlos und ohne Verkaufsdruck.
         </p>
-        <div class="mt-6 flex flex-col sm:flex-row items-center justify-center gap-4">
-          <a href="buchen.html" class="px-8 py-3.5 rounded-xl bg-accent-indigo text-white font-bold text-xs shadow-glow-sm hover:scale-105 transition-all">
+        <div class="mt-6 flex flex-col sm:flex-row items-center justify-center gap-3">
+          <a href="buchen.html" class="px-6 py-3 rounded-xl bg-white text-black font-semibold text-xs hover:bg-neutral-200 transition-colors">
             Kostenloses Erstgespräch buchen
           </a>
-          <a href="kontakt.html" class="px-8 py-3.5 rounded-xl bg-white/10 hover:bg-white/20 text-white font-semibold text-xs transition-colors">
+          <a href="kontakt.html" class="px-6 py-3 rounded-xl border border-white/10 text-neutral-300 hover:text-white hover:bg-white/[0.04] text-xs transition-colors">
             Nachricht schreiben
           </a>
         </div>
@@ -270,20 +246,20 @@
   </main>
 
   <!-- FOOTER -->
-  <footer class="border-t border-white/10 bg-obsidian-deep py-12">
+  <footer class="border-t border-white/[0.08] bg-[#060709] py-12">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex flex-col md:flex-row items-center justify-between gap-6">
         <div class="flex items-center gap-3">
           <img src="assets/logo-white.png" alt="EMPACT STUDIO" class="h-9 sm:h-10 w-auto object-contain">
-          <span class="text-xs text-slate-400">| Marlon Staatz & Elias Ambrosius GbR</span>
+          <span class="text-xs text-neutral-500">| Marlon Staatz & Elias Ambrosius GbR</span>
         </div>
-        <div class="flex items-center gap-6 text-xs text-slate-400">
+        <div class="flex items-center gap-6 text-xs text-neutral-400">
           <a href="leistungen.html" class="hover:text-white">Leistungen</a>
           <a href="preise.html" class="hover:text-white">Preise & Pakete</a>
           <a href="ueber-uns.html" class="hover:text-white">Über uns</a>
           <a href="kontakt.html" class="hover:text-white">Kontakt</a>
-          <a href="impressum.html" class="hover:text-white">Impressum</a>
-          <a href="datenschutz.html" class="hover:text-white">Datenschutz</a>
+          <a href="impressum.html" class="hover:text-neutral-300">Impressum</a>
+          <a href="datenschutz.html" class="hover:text-neutral-300">Datenschutz</a>
         </div>
       </div>
     </div>
