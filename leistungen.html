@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="de" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Unsere Leistungen einfach erklärt | EMPACT STUDIO</title>
+  <meta name="description" content="Was wir für Sie tun: Moderne Websites, gezielte Werbung auf Instagram & Facebook und kurze Videos für Ihren Betrieb. Einfach monatlich betreut.">
+  
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='24' fill='%230B0C10'/><path d='M30 25h40v12H44v13h22v12H44v13h26v12H30z' fill='%236366F1'/></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            obsidian: {
+              DEFAULT: '#0B0C10',
+              deep: '#060709',
+              card: 'rgba(18, 22, 31, 0.75)',
+              surface: '#121620',
+              border: 'rgba(255, 255, 255, 0.08)',
+              hover: 'rgba(255, 255, 255, 0.14)'
+            },
+            accent: {
+              indigo: '#6366F1',
+              violet: '#8B5CF6',
+              cyan: '#38BDF8',
+              glow: 'rgba(99, 102, 241, 0.25)'
+            }
+          },
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'system-ui', '-apple-system', 'sans-serif'],
+          },
+          boxShadow: {
+            'glow-sm': '0 0 20px -5px rgba(99, 102, 241, 0.3)',
+            'glass': '0 8px 32px 0 rgba(0, 0, 0, 0.37)'
+          }
+        }
+      }
+    }
+  </script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    body { background-color: #0B0C10; color: #F8FAFC; font-family: 'Plus Jakarta Sans', sans-serif; overflow-x: hidden; }
+    .glass-nav { background: rgba(11, 12, 16, 0.85); backdrop-filter: blur(20px); border-bottom: 1px solid rgba(255, 255, 255, 0.08); }
+    .glass-card { background: rgba(16, 20, 29, 0.7); backdrop-filter: blur(16px); border: 1px solid rgba(255, 255, 255, 0.08); transition: all 0.3s ease; }
+    .glass-card:hover { border-color: rgba(99, 102, 241, 0.35); transform: translateY(-4px); }
+    .badge-gradient { background: linear-gradient(135deg, rgba(99, 102, 241, 0.15) 0%, rgba(139, 92, 246, 0.15) 100%); border: 1px solid rgba(99, 102, 241, 0.3); }
+  </style>
+</head>
+<body class="selection:bg-accent-indigo selection:text-white">
+
+  <!-- Ambient Light -->
+  <div class="fixed inset-0 pointer-events-none -z-10 overflow-hidden">
+    <div class="absolute -top-40 left-1/2 -translate-x-1/2 w-[800px] h-[450px] bg-indigo-600/15 blur-[140px] rounded-full"></div>
+    <div class="absolute top-[50%] -right-32 w-[600px] h-[500px] bg-cyan-600/10 blur-[160px] rounded-full"></div>
+  </div>
+
+  <!-- NAVIGATION -->
+  <header class="fixed top-0 left-0 right-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-4">
+      <nav class="glass-nav rounded-2xl px-5 py-3.5 flex items-center justify-between border border-white/10 shadow-glass">
+        <a href="index.html" class="flex items-center group py-0.5">
+          <img src="assets/logo-white.png" alt="EMPACT STUDIO Logo" class="h-12 sm:h-14 lg:h-16 w-auto object-contain group-hover:scale-105 transition-transform duration-300">
+        </a>
+        <div class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-300">
+          <a href="index.html" class="hover:text-white transition-colors">Startseite</a>
+          <a href="leistungen.html" class="text-indigo-400 font-semibold">Leistungen</a>
+          <a href="preise.html" class="hover:text-white transition-colors">Preise & Pakete</a>
+          <a href="ueber-uns.html" class="hover:text-white transition-colors">Über uns</a>
+          <a href="kontakt.html" class="hover:text-white transition-colors">Kontakt</a>
+        </div>
+        <div class="hidden md:flex items-center gap-3">
+          <a href="buchen.html" class="px-5 py-2.5 rounded-xl bg-accent-indigo text-white text-sm font-semibold shadow-glow-sm flex items-center gap-2">
+            <i data-lucide="calendar" class="w-4 h-4"></i>
+            <span>Erstgespräch buchen</span>
+          </a>
+        </div>
+        <button id="mobileMenuBtn" aria-label="Menü" class="md:hidden p-2 text-slate-300">
+          <i data-lucide="menu" class="w-6 h-6"></i>
+        </button>
+      </nav>
+    </div>
+    <div id="mobileMenu" class="hidden md:hidden max-w-7xl mx-auto px-4 mt-2">
+      <div class="glass-nav rounded-2xl p-6 border border-white/10 flex flex-col gap-4 text-center">
+        <a href="index.html" class="text-slate-200 py-2">Startseite</a>
+        <a href="leistungen.html" class="text-indigo-400 font-semibold py-2">Leistungen</a>
+        <a href="preise.html" class="text-slate-200 py-2">Preise & Pakete</a>
+        <a href="ueber-uns.html" class="text-slate-200 py-2">Über uns</a>
+        <a href="kontakt.html" class="text-slate-200 py-2">Kontakt</a>
+        <a href="buchen.html" class="py-3 rounded-xl bg-accent-indigo text-white font-semibold">Erstgespräch buchen</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- MAIN CONTENT -->
+  <main class="pt-36 pb-24">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Header -->
+      <div class="text-center max-w-3xl mx-auto mb-20">
+        <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full badge-gradient text-xs font-semibold text-indigo-300 uppercase tracking-wider mb-4">
+          Einfach & verständlich
+        </div>
+        <h1 class="text-4xl sm:text-6xl font-extrabold text-white tracking-tight">
+          Das machen wir für Ihren Betrieb.
+        </h1>
+        <p class="mt-5 text-slate-400 text-base sm:text-lg">
+          Keine komplizierten Fachbegriffe. Wir helfen Ihnen dabei, dass Menschen in Ihrer Region auf Sie aufmerksam werden und sich bei Ihnen melden.
+        </p>
+      </div>
+
+      <!-- SERVICE 1: WEBDESIGN -->
+      <div class="glass-card rounded-3xl p-8 sm:p-12 mb-12 border-white/10" id="webdesign">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+          <div class="lg:col-span-7">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-500/15 text-indigo-300 text-xs font-bold uppercase mb-3">
+              Leistung 01
+            </div>
+            <h2 class="text-3xl font-extrabold text-white">Moderne Website & Rundum-Sorglos-Pflege</h2>
+            <p class="mt-4 text-slate-300 text-sm leading-relaxed">
+              Ihre Website ist das Aushängeschild Ihres Betriebs. Wir bauen Ihnen eine moderne Seite, die sofort Vertrauen schafft und auf allen Geräten gestochen scharf aussieht. Und das Beste: Wir kümmern uns um alles – von der Technik über den sicheren Speicherplatz bis hin zu Textänderungen.
+            </p>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-8 text-xs text-slate-200">
+              <div class="flex items-start gap-2.5">
+                <i data-lucide="check" class="w-4 h-4 text-accent-cyan shrink-0 mt-0.5"></i>
+                <div><strong>Sieht super auf dem Smartphone aus:</strong> Denn 8 von 10 Besuchern nutzen ihr Handy.</div>
+              </div>
+              <div class="flex items-start gap-2.5">
+                <i data-lucide="check" class="w-4 h-4 text-accent-cyan shrink-0 mt-0.5"></i>
+                <div><strong>Kein Warten beim Laden:</strong> Die Seite öffnet sich blitzschnell ohne Verzögerung.</div>
+              </div>
+              <div class="flex items-start gap-2.5">
+                <i data-lucide="check" class="w-4 h-4 text-accent-cyan shrink-0 mt-0.5"></i>
+                <div><strong>Wir pflegen alles:</strong> Wenn Sie neue Fotos oder Texte haben, schicken Sie sie uns einfach.</div>
+              </div>
+              <div class="flex items-start gap-2.5">
+                <i data-lucide="check" class="w-4 h-4 text-accent-cyan shrink-0 mt-0.5"></i>
+                <div><strong>Rechtssicher:</strong> Inklusive Impressum, Cookie-Banner und Datenschutz.</div>
+              </div>
+            </div>
+
+            <div class="mt-8 flex items-center gap-4">
+              <a href="preise.html" class="px-5 py-2.5 rounded-xl bg-white/10 hover:bg-white/20 text-white text-xs font-semibold flex items-center gap-2 transition-colors">
+                <span>Im Paket ab 390 €/Monat</span>
+                <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+              </a>
+              <a href="buchen.html" class="text-xs font-semibold text-indigo-400 hover:text-indigo-300">Website besprechen &rarr;</a>
+            </div>
+          </div>
+
+          <div class="lg:col-span-5 bg-obsidian-surface rounded-2xl p-6 border border-white/5 space-y-4">
+            <div class="text-xs font-bold text-slate-400 uppercase tracking-wider">Was Sie bei uns bekommen</div>
+            <div class="p-4 rounded-xl bg-white/5 border border-white/5 flex items-center justify-between">
+              <span class="text-xs text-slate-300">Fertigstellung</span>
+              <span class="text-sm font-extrabold text-emerald-400">In nur 10 bis 14 Tagen</span>
+            </div>
+            <div class="p-4 rounded-xl bg-white/5 border border-white/5 flex items-center justify-between">
+              <span class="text-xs text-slate-300">Sicherheit & Backups</span>
+              <span class="text-sm font-extrabold text-accent-cyan">Täglich automatisch</span>
+            </div>
+            <div class="p-4 rounded-xl bg-white/5 border border-white/5 flex items-center justify-between">
+              <span class="text-xs text-slate-300">Einrichtungsgebühr</span>
+              <span class="text-sm font-extrabold text-indigo-300">0 € (komplett inklusive)</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SERVICE 2: SOCIAL ADS -->
+      <div class="glass-card rounded-3xl p-8 sm:p-12 mb-12 border-accent-indigo/40" id="social-ads">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+          <div class="lg:col-span-7">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-violet-500/15 text-violet-300 text-xs font-bold uppercase mb-3">
+              Leistung 02 • Beliebtester Bereich
+            </div>
+            <h2 class="text-3xl font-extrabold text-white">Werbung auf Instagram, Facebook & TikTok</h2>
+            <p class="mt-4 text-slate-300 text-sm leading-relaxed">
+              Die meisten Menschen in Ihrer Stadt verbringen jeden Tag Zeit am Smartphone. Mit bezahlten Anzeigen sorgen wir dafür, dass Ihre Angebote genau den Leuten angezeigt werden, die Ihre Hilfe brauchen – und die sofort per Klick anfragen können.
+            </p>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-8 text-xs text-slate-200">
+              <div class="flex items-start gap-2.5">
+                <i data-lucide="check" class="w-4 h-4 text-accent-indigo shrink-0 mt-0.5"></i>
+                <div><strong>Nur in Ihrer Region:</strong> Sie bestimmen das Gebiet, zum Beispiel 20 oder 40 km Umkreis.</div>
+              </div>
+              <div class="flex items-start gap-2.5">
+                <i data-lucide="check" class="w-4 h-4 text-accent-indigo shrink-0 mt-0.5"></i>
+                <div><strong>Echte Interessenten:</strong> Name, Telefonnummer und Anliegen landen direkt bei Ihnen.</div>
+              </div>
+              <div class="flex items-start gap-2.5">
+                <i data-lucide="check" class="w-4 h-4 text-accent-indigo shrink-0 mt-0.5"></i>
+                <div><strong>Laufende Verbesserung:</strong> Marlon prüft jede Woche, welche Anzeigen am besten ankommen.</div>
+              </div>
+              <div class="flex items-start gap-2.5">
+                <i data-lucide="check" class="w-4 h-4 text-accent-indigo shrink-0 mt-0.5"></i>
+                <div><strong>Volle Kostenkontrolle:</strong> Sie sehen genau, was jeder gewonnene Interessent kostet.</div>
+              </div>
+            </div>
+
+            <div class="mt-8 flex items-center gap-4">
+              <a href="preise.html" class="px-5 py-2.5 rounded-xl bg-accent-indigo hover:opacity-90 text-white text-xs font-semibold flex items-center gap-2 transition-all">
+                <span>Im Growth-Paket ab 890 €/Monat</span>
+                <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+              </a>
+              <a href="buchen.html" class="text-xs font-semibold text-indigo-300 hover:text-white">Werbung besprechen &rarr;</a>
+            </div>
+          </div>
+
+          <div class="lg:col-span-5 bg-obsidian-surface rounded-2xl p-6 border border-white/5 space-y-4">
+            <div class="text-xs font-bold text-slate-400 uppercase tracking-wider">So läuft eine Anzeige ab</div>
+            <div class="p-4 rounded-xl bg-white/5 border border-white/5">
+              <div class="text-xs text-slate-400">1. Der Kunde sieht die Anzeige</div>
+              <div class="text-sm font-semibold text-white mt-1">Ein kurzes Video weckt das Interesse beim Scrollen.</div>
+            </div>
+            <div class="p-4 rounded-xl bg-white/5 border border-white/5">
+              <div class="text-xs text-slate-400">2. Der Kunde tippt auf den Button</div>
+              <div class="text-sm font-semibold text-white mt-1">Er füllt in unter 30 Sekunden 3 kurze Fragen aus.</div>
+            </div>
+            <div class="p-4 rounded-xl bg-white/5 border border-white/5">
+              <div class="text-xs text-slate-400">3. Sie rufen den Kunden an</div>
+              <div class="text-sm font-semibold text-emerald-400 mt-1">Die Kontaktdaten landen sofort auf Ihrem Handy.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SERVICE 3: CONTENT CREATION -->
+      <div class="glass-card rounded-3xl p-8 sm:p-12 mb-16 border-white/10" id="content">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+          <div class="lg:col-span-7">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-500/15 text-cyan-300 text-xs font-bold uppercase mb-3">
+              Leistung 03
+            </div>
+            <h2 class="text-3xl font-extrabold text-white">Videos & Fotos für Ihren Betrieb</h2>
+            <p class="mt-4 text-slate-300 text-sm leading-relaxed">
+              Kunden möchten sehen, wer hinter einem Betrieb steckt. Wir erstellen kurze, sympathische Videos und saubere Grafiken für Ihre Social-Media-Kanäle. So gewinnen Sie das Vertrauen potenzieller Kunden, noch bevor sie zum ersten Mal bei Ihnen anrufen.
+            </p>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-8 text-xs text-slate-200">
+              <div class="flex items-start gap-2.5">
+                <i data-lucide="check" class="w-4 h-4 text-accent-cyan shrink-0 mt-0.5"></i>
+                <div><strong>Kurze Handy-Videos (Reels):</strong> Passend formatiert für Instagram und Facebook.</div>
+              </div>
+              <div class="flex items-start gap-2.5">
+                <i data-lucide="check" class="w-4 h-4 text-accent-cyan shrink-0 mt-0.5"></i>
+                <div><strong>Komplett fertig geschnitten:</strong> Inklusive Untertitel, Musik und Logo.</div>
+              </div>
+              <div class="flex items-start gap-2.5">
+                <i data-lucide="check" class="w-4 h-4 text-accent-cyan shrink-0 mt-0.5"></i>
+                <div><strong>Kein Stress beim Drehen:</strong> Wir sagen Ihnen genau, was gefilmt werden muss.</div>
+              </div>
+              <div class="flex items-start gap-2.5">
+                <i data-lucide="check" class="w-4 h-4 text-accent-cyan shrink-0 mt-0.5"></i>
+                <div><strong>Direkt für Werbeanzeigen nutzbar:</strong> Für maximale Aufmerksamkeit.</div>
+              </div>
+            </div>
+
+            <div class="mt-8 flex items-center gap-4">
+              <a href="preise.html" class="px-5 py-2.5 rounded-xl bg-white/10 hover:bg-white/20 text-white text-xs font-semibold flex items-center gap-2 transition-colors">
+                <span>In Growth & Scale enthalten</span>
+                <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+              </a>
+              <a href="buchen.html" class="text-xs font-semibold text-cyan-300 hover:text-white">Video-Ideen besprechen &rarr;</a>
+            </div>
+          </div>
+
+          <div class="lg:col-span-5 bg-obsidian-surface rounded-2xl p-6 border border-white/5 space-y-3 text-xs text-slate-300">
+            <div class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">Beispiele für Videos</div>
+            <div class="p-3 bg-white/5 rounded-xl flex items-center gap-3">
+              <i data-lucide="play" class="w-4 h-4 text-indigo-400 shrink-0"></i>
+              <span>Vorher-Nachher Videos Ihrer Arbeiten und Projekte</span>
+            </div>
+            <div class="p-3 bg-white/5 rounded-xl flex items-center gap-3">
+              <i data-lucide="play" class="w-4 h-4 text-indigo-400 shrink-0"></i>
+              <span>Kurze Vorstellung Ihres Teams und Ihrer Werkstatt / Praxis</span>
+            </div>
+            <div class="p-3 bg-white/5 rounded-xl flex items-center gap-3">
+              <i data-lucide="play" class="w-4 h-4 text-indigo-400 shrink-0"></i>
+              <span>Einfache Antworten auf die häufigsten Kundenfragen</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- PROCESS TIMELINE -->
+      <div class="mt-20">
+        <div class="text-center max-w-2xl mx-auto mb-14">
+          <h2 class="text-2xl sm:text-4xl font-extrabold text-white">So einfach arbeiten wir zusammen</h2>
+          <p class="mt-3 text-slate-400 text-sm">In 4 Schritten von der Idee zur fertigen Neukunden-Maschine.</p>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div class="glass-card rounded-2xl p-6 border-white/10">
+            <div class="w-10 h-10 rounded-xl bg-indigo-500/20 text-indigo-300 font-extrabold flex items-center justify-center text-sm mb-4">Schritt 1</div>
+            <h3 class="text-base font-bold text-white">Kennenlernen</h3>
+            <p class="text-xs text-slate-400 mt-2">Wir telefonieren kurz für 30 Minuten und schauen, welches Monatsmodell am besten zu Ihnen passt.</p>
+          </div>
+
+          <div class="glass-card rounded-2xl p-6 border-white/10">
+            <div class="w-10 h-10 rounded-xl bg-indigo-500/20 text-indigo-300 font-extrabold flex items-center justify-center text-sm mb-4">Schritt 2</div>
+            <h3 class="text-base font-bold text-white">Wir bauen alles</h3>
+            <p class="text-xs text-slate-400 mt-2">Elias baut die Website, Marlon bereitet die Werbeanzeigen vor. Sie müssen sich um fast nichts kümmern.</p>
+          </div>
+
+          <div class="glass-card rounded-2xl p-6 border-white/10">
+            <div class="w-10 h-10 rounded-xl bg-indigo-500/20 text-indigo-300 font-extrabold flex items-center justify-center text-sm mb-4">Schritt 3</div>
+            <h3 class="text-base font-bold text-white">Gemeinsamer Start</h3>
+            <p class="text-xs text-slate-400 mt-2">Nach ca. 10 bis 14 Tagen geht Ihre neue Website live und die ersten Werbeanzeigen starten.</p>
+          </div>
+
+          <div class="glass-card rounded-2xl p-6 border-white/10">
+            <div class="w-10 h-10 rounded-xl bg-indigo-500/20 text-indigo-300 font-extrabold flex items-center justify-center text-sm mb-4">Schritt 4</div>
+            <h3 class="text-base font-bold text-white">Laufende Betreuung</h3>
+            <p class="text-xs text-slate-400 mt-2">Wir bleiben an Ihrer Seite, verbessern die Ergebnisse Monat für Monat und ändern Texte auf Wunsch sofort.</p>
+          </div>
+        </div>
+
+        <div class="text-center mt-12">
+          <a href="buchen.html" class="inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-accent-indigo text-white font-bold text-sm shadow-glow-sm hover:opacity-95 transition-all">
+            <span>Kostenloses 30-Minuten-Gespräch buchen</span>
+            <i data-lucide="arrow-right" class="w-4 h-4"></i>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="border-t border-white/10 bg-obsidian-deep py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+        <div class="flex items-center gap-3">
+          <img src="assets/logo-white.png" alt="EMPACT STUDIO" class="h-9 sm:h-10 w-auto object-contain">
+          <span class="text-xs text-slate-400">| Marlon Staatz & Elias Ambrosius GbR</span>
+        </div>
+        <div class="flex items-center gap-6 text-xs text-slate-400">
+          <a href="leistungen.html" class="hover:text-white">Leistungen</a>
+          <a href="preise.html" class="hover:text-white">Preise & Pakete</a>
+          <a href="ueber-uns.html" class="hover:text-white">Über uns</a>
+          <a href="kontakt.html" class="hover:text-white">Kontakt</a>
+          <a href="impressum.html" class="hover:text-white">Impressum</a>
+          <a href="datenschutz.html" class="hover:text-white">Datenschutz</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    lucide.createIcons();
+    document.getElementById('mobileMenuBtn').addEventListener('click', () => {
+      document.getElementById('mobileMenu').classList.toggle('hidden');
+    });
+  </script>
+</body>
+</html>

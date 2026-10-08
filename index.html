@@ -1,0 +1,751 @@
+<!DOCTYPE html>
+<html lang="de" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EMPACT STUDIO | Moderne Websites & Neukunden aus Ihrer Region</title>
+  <meta name="description" content="EMPACT STUDIO von Marlon Staatz & Elias Ambrosius. Wir bringen Ihrem Unternehmen planbar neue Kunden – mit modernen Websites, Werbung auf Social Media und Videos. Ohne teure Einmalkosten, einfach monatlich.">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='24' fill='%230B0C10'/><path d='M30 25h40v12H44v13h22v12H44v13h26v12H30z' fill='%236366F1'/></svg>">
+
+  <!-- Google Fonts: Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            obsidian: {
+              DEFAULT: '#0B0C10',
+              deep: '#060709',
+              card: 'rgba(18, 22, 31, 0.75)',
+              surface: '#121620',
+              border: 'rgba(255, 255, 255, 0.08)',
+              hover: 'rgba(255, 255, 255, 0.14)'
+            },
+            accent: {
+              indigo: '#6366F1',
+              violet: '#8B5CF6',
+              cyan: '#38BDF8',
+              glow: 'rgba(99, 102, 241, 0.25)'
+            }
+          },
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'system-ui', '-apple-system', 'sans-serif'],
+          },
+          boxShadow: {
+            'glow-sm': '0 0 20px -5px rgba(99, 102, 241, 0.3)',
+            'glow-md': '0 0 35px -5px rgba(99, 102, 241, 0.4)',
+            'glass': '0 8px 32px 0 rgba(0, 0, 0, 0.37)'
+          },
+          animation: {
+            'float': 'float 7s ease-in-out infinite',
+          },
+          keyframes: {
+            float: {
+              '0%, 100%': { transform: 'translateY(0px)' },
+              '50%': { transform: 'translateY(-10px)' },
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <style>
+    body {
+      background-color: #0B0C10;
+      color: #F8FAFC;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      overflow-x: hidden;
+    }
+
+    .glass-nav {
+      background: rgba(11, 12, 16, 0.85);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .glass-card {
+      background: rgba(16, 20, 29, 0.7);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .glass-card:hover {
+      border-color: rgba(99, 102, 241, 0.35);
+      transform: translateY(-4px);
+      box-shadow: 0 16px 40px -15px rgba(99, 102, 241, 0.18);
+    }
+
+    .badge-gradient {
+      background: linear-gradient(135deg, rgba(99, 102, 241, 0.15) 0%, rgba(139, 92, 246, 0.15) 100%);
+      border: 1px solid rgba(99, 102, 241, 0.3);
+    }
+
+    .radial-bg {
+      background: radial-gradient(circle at 50% 0%, rgba(99, 102, 241, 0.15) 0%, rgba(11, 12, 16, 0) 70%);
+    }
+
+    .grid-pattern {
+      background-size: 40px 40px;
+      background-image: 
+        linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    }
+  </style>
+</head>
+<body class="selection:bg-accent-indigo selection:text-white">
+
+  <!-- Ambient Background Lighting -->
+  <div class="fixed inset-0 pointer-events-none -z-10 overflow-hidden">
+    <div class="absolute -top-40 left-1/2 -translate-x-1/2 w-[700px] sm:w-[900px] h-[500px] bg-indigo-600/15 blur-[140px] rounded-full"></div>
+    <div class="absolute top-[40%] -left-32 w-[500px] h-[400px] bg-violet-600/10 blur-[150px] rounded-full"></div>
+    <div class="absolute bottom-10 -right-32 w-[600px] h-[500px] bg-cyan-500/10 blur-[160px] rounded-full"></div>
+    <div class="absolute inset-0 grid-pattern opacity-60"></div>
+  </div>
+
+  <!-- ==================== NAVIGATION ==================== -->
+  <header class="fixed top-0 left-0 right-0 z-50 transition-all duration-300" id="mainHeader">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-4">
+      <nav class="glass-nav rounded-2xl px-5 py-3 flex items-center justify-between border border-white/10 shadow-glass">
+        
+        <!-- Logo -->
+        <a href="index.html" class="flex items-center group py-0.5">
+          <img src="assets/logo-white.png" alt="EMPACT STUDIO Logo" class="h-12 sm:h-14 lg:h-16 w-auto object-contain group-hover:scale-105 transition-transform duration-300">
+        </a>
+
+        <!-- Desktop Navigation Links -->
+        <div class="hidden md:flex items-center gap-7 text-sm font-medium text-slate-300">
+          <a href="leistungen.html" class="hover:text-white transition-colors duration-200">Leistungen</a>
+          <a href="preise.html" class="hover:text-white transition-colors duration-200">Preise & Pakete</a>
+          <a href="ueber-uns.html" class="hover:text-white transition-colors duration-200">Über uns</a>
+          <a href="kontakt.html" class="hover:text-white transition-colors duration-200">Kontakt</a>
+        </div>
+
+        <!-- Desktop Action CTA -->
+        <div class="hidden md:flex items-center gap-3">
+          <a href="buchen.html" class="relative group inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-accent-indigo text-white text-sm font-semibold tracking-wide hover:opacity-95 shadow-glow-sm transition-all duration-300">
+            <i data-lucide="calendar" class="w-4 h-4"></i>
+            <span>Erstgespräch buchen</span>
+          </a>
+        </div>
+
+        <!-- Mobile Menu Toggle Button -->
+        <button id="mobileMenuBtn" aria-label="Menü öffnen" class="md:hidden p-2 text-slate-300 hover:text-white focus:outline-none">
+          <i data-lucide="menu" id="menuIconOpen" class="w-6 h-6"></i>
+          <i data-lucide="x" id="menuIconClose" class="w-6 h-6 hidden"></i>
+        </button>
+      </nav>
+    </div>
+
+    <!-- Mobile Dropdown Navigation -->
+    <div id="mobileMenu" class="hidden md:hidden max-w-7xl mx-auto px-4 mt-2">
+      <div class="glass-nav rounded-2xl p-6 border border-white/10 flex flex-col gap-4 text-center">
+        <a href="leistungen.html" class="text-slate-200 font-medium py-2 hover:text-indigo-400">Leistungen</a>
+        <a href="preise.html" class="text-slate-200 font-medium py-2 hover:text-indigo-400">Preise & Pakete</a>
+        <a href="ueber-uns.html" class="text-slate-200 font-medium py-2 hover:text-indigo-400">Über uns</a>
+        <a href="kontakt.html" class="text-slate-200 font-medium py-2 hover:text-indigo-400">Kontakt</a>
+        <a href="buchen.html" class="mt-2 inline-flex items-center justify-center gap-2 py-3 rounded-xl bg-accent-indigo text-white font-semibold shadow-glow-sm">
+          <i data-lucide="calendar" class="w-4 h-4"></i>
+          <span>Erstgespräch buchen</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- ==================== HERO SECTION ==================== -->
+    <section id="hero" class="relative pt-36 sm:pt-44 pb-20 sm:pb-32 overflow-hidden radial-bg">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+        
+        <!-- Live Status Pill -->
+        <div class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full badge-gradient mb-8 text-xs font-semibold text-indigo-300 backdrop-blur-md animate-float">
+          <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+          <span>Einfach monatlich • Keine teuren Einmalkosten</span>
+        </div>
+
+        <!-- Main Headline -->
+        <h1 class="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-white max-w-5xl mx-auto leading-[1.15]">
+          Mehr Kunden aus Ihrer Region. <br>
+          <span class="bg-clip-text text-transparent bg-gradient-to-r from-white via-indigo-200 to-indigo-400">
+            Ganz einfach über das Internet.
+          </span>
+        </h1>
+
+        <!-- Sub-Headline -->
+        <p class="mt-6 text-lg sm:text-xl text-slate-300 max-w-3xl mx-auto font-normal leading-relaxed">
+          Wir bauen Ihnen eine moderne Website, schalten gezielte Werbung auf Instagram & Facebook und machen passende Videos für Ihren Betrieb. Alles in einem fairen Monatsbeitrag ab 390 € – ohne Fachchinesisch und ohne Stress für Sie.
+        </p>
+
+        <!-- CTA Action Buttons -->
+        <div class="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4 max-w-md mx-auto">
+          <a href="buchen.html" class="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-8 py-4 rounded-xl bg-gradient-to-r from-accent-indigo via-indigo-600 to-accent-violet text-white font-semibold text-base shadow-glow-md hover:scale-[1.02] active:scale-[0.98] transition-all duration-300">
+            <span>Kostenloses Erstgespräch buchen</span>
+            <i data-lucide="calendar" class="w-5 h-5"></i>
+          </a>
+          <a href="preise.html" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl glass-card text-slate-200 font-semibold text-base hover:text-white hover:border-slate-500 transition-all duration-300">
+            <span>Pakete ansehen</span>
+            <i data-lucide="chevron-right" class="w-4 h-4"></i>
+          </a>
+        </div>
+
+        <!-- Trust Badges -->
+        <div class="mt-16 pt-10 border-t border-white/10 max-w-4xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-6 text-left">
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-lg bg-indigo-500/10 border border-indigo-500/20 flex items-center justify-center text-accent-indigo">
+              <i data-lucide="credit-card" class="w-5 h-5"></i>
+            </div>
+            <div>
+              <div class="text-sm font-bold text-white">0 € Einrichtungsgebühr</div>
+              <div class="text-xs text-slate-400">Keine teure Einmalzahlung</div>
+            </div>
+          </div>
+
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-lg bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center text-accent-cyan">
+              <i data-lucide="zap" class="w-5 h-5"></i>
+            </div>
+            <div>
+              <div class="text-sm font-bold text-white">In 2 Wochen online</div>
+              <div class="text-xs text-slate-400">Schnell & zuverlässig</div>
+            </div>
+          </div>
+
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-lg bg-violet-500/10 border border-violet-500/20 flex items-center justify-center text-accent-violet">
+              <i data-lucide="user-check" class="w-5 h-5"></i>
+            </div>
+            <div>
+              <div class="text-sm font-bold text-white">Feste Ansprechpartner</div>
+              <div class="text-xs text-slate-400">Marlon & Elias direkt</div>
+            </div>
+          </div>
+
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-lg bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400">
+              <i data-lucide="trending-up" class="w-5 h-5"></i>
+            </div>
+            <div>
+              <div class="text-sm font-bold text-white">Monatlich kündbar</div>
+              <div class="text-xs text-slate-400">Fair & ohne Knebelvertrag</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==================== SERVICES SECTION (BENTO GRID) ==================== -->
+    <section id="services" class="py-24 relative">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="text-center max-w-3xl mx-auto mb-16">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full badge-gradient text-xs font-semibold text-indigo-300 uppercase tracking-wider mb-3">
+            Was wir für Sie tun
+          </div>
+          <h2 class="text-3xl sm:text-5xl font-extrabold text-white tracking-tight">
+            Alles, was Sie für neue Kunden brauchen.
+          </h2>
+          <p class="mt-4 text-slate-400 text-base sm:text-lg">
+            Wir kümmern uns um Ihren gesamten Auftritt im Internet. Sie müssen keine Zeit investieren und können sich voll auf Ihre Arbeit konzentrieren.
+          </p>
+        </div>
+
+        <!-- Bento Grid Services Layout -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          
+          <!-- Bento 1: Webdesign -->
+          <div class="glass-card rounded-3xl p-8 relative overflow-hidden flex flex-col justify-between group">
+            <div class="absolute top-0 right-0 w-36 h-36 bg-indigo-600/10 rounded-full blur-2xl group-hover:bg-indigo-600/20 transition-all"></div>
+            <div>
+              <div class="w-14 h-14 rounded-2xl bg-indigo-500/15 border border-indigo-500/30 flex items-center justify-center text-accent-indigo mb-6 group-hover:scale-110 transition-transform duration-300">
+                <i data-lucide="layout" class="w-7 h-7"></i>
+              </div>
+              <span class="text-xs font-bold text-indigo-400 tracking-wider uppercase">01 • Moderne Website</span>
+              <h3 class="text-2xl font-bold text-white mt-2">Websites, die Kunden bringen</h3>
+              <p class="mt-3 text-slate-300 text-sm leading-relaxed">
+                Wir erstellen Ihnen eine moderne Website, die auf jedem Smartphone perfekt funktioniert, blitzschnell lädt und Besucher dazu bringt, bei Ihnen anzufragen.
+              </p>
+            </div>
+            
+            <div class="mt-8 pt-6 border-t border-white/5 space-y-2.5 text-xs text-slate-300">
+              <div class="flex items-center gap-2">
+                <i data-lucide="check" class="w-4 h-4 text-accent-cyan"></i>
+                <span>Sieht edel aus und weckt sofort Vertrauen</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <i data-lucide="check" class="w-4 h-4 text-accent-cyan"></i>
+                <span>Lädt in unter einer Sekunde</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <i data-lucide="check" class="w-4 h-4 text-accent-cyan"></i>
+                <span>Hosting, Wartung & Textänderungen sind inklusive</span>
+              </div>
+              <div class="pt-3">
+                <a href="leistungen.html#webdesign" class="text-indigo-400 font-semibold hover:underline flex items-center gap-1">
+                  Mehr über Websites erfahren &rarr;
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Bento 2: Social Media Ads -->
+          <div class="glass-card rounded-3xl p-8 relative overflow-hidden flex flex-col justify-between group md:scale-105 border-indigo-500/40 shadow-glow-sm">
+            <div class="absolute -top-10 -right-10 w-44 h-44 bg-violet-600/15 rounded-full blur-3xl"></div>
+            <div class="absolute top-4 right-4">
+              <span class="px-2.5 py-1 rounded-full text-[11px] font-bold bg-indigo-500/20 text-indigo-300 border border-indigo-500/40">
+                Am meisten gefragt
+              </span>
+            </div>
+            <div>
+              <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-indigo-500/20 to-violet-500/20 border border-indigo-500/30 flex items-center justify-center text-white mb-6 group-hover:scale-110 transition-transform duration-300">
+                <i data-lucide="target" class="w-7 h-7 text-indigo-300"></i>
+              </div>
+              <span class="text-xs font-bold text-violet-400 tracking-wider uppercase">02 • Online-Werbung</span>
+              <h3 class="text-2xl font-bold text-white mt-2">Werbung auf Social Media</h3>
+              <p class="mt-3 text-slate-300 text-sm leading-relaxed">
+                Wir zeigen Ihre Angebote genau den Menschen in Ihrer Stadt oder Umgebung, die gerade nach Ihren Leistungen suchen – auf Instagram, Facebook und TikTok.
+              </p>
+            </div>
+            
+            <div class="mt-8 pt-6 border-t border-white/5 space-y-2.5 text-xs text-slate-300">
+              <div class="flex items-center gap-2">
+                <i data-lucide="check" class="w-4 h-4 text-accent-indigo"></i>
+                <span>Gezielt in Ihrem Einzugsgebiet (z. B. 25 km Umkreis)</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <i data-lucide="check" class="w-4 h-4 text-accent-indigo"></i>
+                <span>Bringt echte Anfragen mit Name, Telefon & E-Mail</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <i data-lucide="check" class="w-4 h-4 text-accent-indigo"></i>
+                <span>Wir optimieren die Werbung jede Woche für Sie</span>
+              </div>
+              <div class="pt-3">
+                <a href="leistungen.html#social-ads" class="text-indigo-400 font-semibold hover:underline flex items-center gap-1">
+                  Mehr über Werbung erfahren &rarr;
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Bento 3: Content Creation -->
+          <div class="glass-card rounded-3xl p-8 relative overflow-hidden flex flex-col justify-between group">
+            <div class="absolute top-0 right-0 w-36 h-36 bg-cyan-600/10 rounded-full blur-2xl group-hover:bg-cyan-600/20 transition-all"></div>
+            <div>
+              <div class="w-14 h-14 rounded-2xl bg-cyan-500/15 border border-cyan-500/30 flex items-center justify-center text-accent-cyan mb-6 group-hover:scale-110 transition-transform duration-300">
+                <i data-lucide="video" class="w-7 h-7"></i>
+              </div>
+              <span class="text-xs font-bold text-cyan-400 tracking-wider uppercase">03 • Videos & Fotos</span>
+              <h3 class="text-2xl font-bold text-white mt-2">Kurze Videos, die begeistern</h3>
+              <p class="mt-3 text-slate-300 text-sm leading-relaxed">
+                Niemand liest gerne lange Texte. Wir erstellen sympathische Kurzvideos (Reels) und Werbebilder für Ihr Unternehmen, die sofort im Kopf bleiben.
+              </p>
+            </div>
+            
+            <div class="mt-8 pt-6 border-t border-white/5 space-y-2.5 text-xs text-slate-300">
+              <div class="flex items-center gap-2">
+                <i data-lucide="check" class="w-4 h-4 text-accent-cyan"></i>
+                <span>Moderne Handy-Videos für Instagram & Facebook</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <i data-lucide="check" class="w-4 h-4 text-accent-cyan"></i>
+                <span>Wir schneiden, beschriften und vertonen alles</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <i data-lucide="check" class="w-4 h-4 text-accent-cyan"></i>
+                <span>Kein Aufwand für Sie – wir geben einfache Anleitungen</span>
+              </div>
+              <div class="pt-3">
+                <a href="leistungen.html#content" class="text-cyan-400 font-semibold hover:underline flex items-center gap-1">
+                  Mehr über Videos erfahren &rarr;
+                </a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="text-center mt-12">
+          <a href="leistungen.html" class="inline-flex items-center gap-2 text-sm font-semibold text-slate-300 hover:text-white transition-colors">
+            <span>Alle Leistungen im Detail ansehen</span>
+            <i data-lucide="arrow-right" class="w-4 h-4"></i>
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==================== PACKAGES & PRICING (MONTHLY ONLY) ==================== -->
+    <section id="packages" class="py-24 bg-obsidian-deep/50 relative">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="text-center max-w-3xl mx-auto mb-16">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full badge-gradient text-xs font-semibold text-indigo-300 uppercase tracking-wider mb-3">
+            Einfache Monatsbeiträge
+          </div>
+          <h2 class="text-3xl sm:text-5xl font-extrabold text-white tracking-tight">
+            Klarer Festpreis. Keine Überraschungen.
+          </h2>
+          <p class="mt-4 text-slate-400 text-base sm:text-lg">
+            Warum tausende Euro auf einmal für eine Website zahlen? Bei uns zahlen Sie einen fairen Monatsbeitrag – Website-Erstellung, Betreuung und Updates sind immer schon mit drin.
+          </p>
+        </div>
+
+        <!-- 3 Packages Bento Cards -->
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch">
+          
+          <!-- PAKET 1: ESSENTIAL -->
+          <div class="glass-card rounded-3xl p-8 flex flex-col justify-between border-white/10 hover:border-slate-400/30">
+            <div>
+              <div class="flex justify-between items-center mb-4">
+                <span class="text-xs font-bold uppercase tracking-wider text-slate-400">Paket 01</span>
+                <span class="text-xs font-medium px-2.5 py-1 rounded-full bg-slate-800 text-slate-300 border border-slate-700">Für Ihren Start</span>
+              </div>
+              <h3 class="text-2xl font-bold text-white">Essential</h3>
+              <p class="text-slate-400 text-xs mt-1">Perfekt für Betriebe, die eine saubere, moderne Website und rundum Ruhe haben wollen.</p>
+              
+              <div class="my-6 pb-6 border-b border-white/10">
+                <div class="flex items-baseline gap-1">
+                  <span class="text-4xl font-extrabold text-white">390 €</span>
+                  <span class="text-xs text-slate-400">/ Monat</span>
+                </div>
+                <div class="text-[11px] text-emerald-400 mt-1 font-semibold">✓ 0 € Einrichtung • Website-Erstellung inklusive</div>
+              </div>
+
+              <ul class="space-y-3.5 text-xs text-slate-300 mb-8">
+                <li class="flex items-start gap-3">
+                  <i data-lucide="check-circle-2" class="w-4 h-4 text-accent-cyan shrink-0 mt-0.5"></i>
+                  <span><strong>Komplette neue Website</strong> – fix und fertig erstellt</span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <i data-lucide="check-circle-2" class="w-4 h-4 text-accent-cyan shrink-0 mt-0.5"></i>
+                  <span><strong>Perfekt auf allen Handys</strong> & extrem schnelle Ladezeit</span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <i data-lucide="check-circle-2" class="w-4 h-4 text-accent-cyan shrink-0 mt-0.5"></i>
+                  <span><strong>Schneller Speicherplatz (Hosting)</strong> & SSL-Sicherheit</span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <i data-lucide="check-circle-2" class="w-4 h-4 text-accent-cyan shrink-0 mt-0.5"></i>
+                  <span><strong>Änderungen inklusive:</strong> Wir passen Texte & Fotos an</span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <i data-lucide="check-circle-2" class="w-4 h-4 text-accent-cyan shrink-0 mt-0.5"></i>
+                  <span>Google-Unternehmensprofil wird für Sie eingerichtet</span>
+                </li>
+              </ul>
+            </div>
+
+            <a href="buchen.html" class="w-full py-3.5 px-4 rounded-xl bg-white/10 hover:bg-white/20 text-white font-semibold text-sm transition-all duration-200 border border-white/15 flex items-center justify-center gap-2">
+              <span>Essential wählen</span>
+              <i data-lucide="arrow-right" class="w-4 h-4"></i>
+            </a>
+          </div>
+
+          <!-- PAKET 2: GROWTH ENGINE (HIGHLIGHT) -->
+          <div class="glass-card rounded-3xl p-8 flex flex-col justify-between border-accent-indigo shadow-glow-md relative lg:-translate-y-4 bg-gradient-to-b from-[#141824] to-[#0D1018]">
+            <div class="absolute -top-3.5 left-1/2 -translate-x-1/2">
+              <span class="px-4 py-1 rounded-full text-xs font-extrabold uppercase tracking-wide bg-gradient-to-r from-accent-indigo to-accent-violet text-white shadow-glow-sm">
+                Empfehlung • Am beliebtesten
+              </span>
+            </div>
+
+            <div>
+              <div class="flex justify-between items-center mb-4 mt-2">
+                <span class="text-xs font-bold uppercase tracking-wider text-indigo-400">Paket 02</span>
+                <span class="text-xs font-medium px-2.5 py-1 rounded-full bg-indigo-500/20 text-indigo-300 border border-indigo-500/30">Mehr Neukunden</span>
+              </div>
+              <h3 class="text-2xl font-bold text-white">Growth Engine</h3>
+              <p class="text-slate-300 text-xs mt-1">Für Unternehmen, die jeden Monat verlässlich neue Anfragen und Kunden gewinnen wollen.</p>
+              
+              <div class="my-6 pb-6 border-b border-white/10">
+                <div class="flex items-baseline gap-1">
+                  <span class="text-4xl font-extrabold text-white">890 €</span>
+                  <span class="text-xs text-indigo-300">/ Monat</span>
+                </div>
+                <div class="text-[11px] text-emerald-400 mt-1 font-semibold">✓ Inklusive Website + Social Media Werbung + Videos</div>
+              </div>
+
+              <ul class="space-y-3.5 text-xs text-slate-200 mb-8">
+                <li class="flex items-start gap-3">
+                  <i data-lucide="check-circle-2" class="w-4 h-4 text-accent-indigo shrink-0 mt-0.5"></i>
+                  <span><strong>Alles aus dem Essential-Paket</strong> (komplette Website & Hosting)</span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <i data-lucide="check-circle-2" class="w-4 h-4 text-accent-indigo shrink-0 mt-0.5"></i>
+                  <span><strong>Aktive Werbung auf Instagram, Facebook & TikTok</strong></span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <i data-lucide="check-circle-2" class="w-4 h-4 text-accent-indigo shrink-0 mt-0.5"></i>
+                  <span><strong>Jeden Monat 4 neue Werbevideos & Grafiken</strong> von uns</span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <i data-lucide="check-circle-2" class="w-4 h-4 text-accent-indigo shrink-0 mt-0.5"></i>
+                  <span><strong>Einfaches Anfrageformular</strong> mit sofortiger Benachrichtigung</span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <i data-lucide="check-circle-2" class="w-4 h-4 text-accent-indigo shrink-0 mt-0.5"></i>
+                  <span>Monatliches kurzes Update: Was hat die Werbung gebracht?</span>
+                </li>
+              </ul>
+            </div>
+
+            <a href="buchen.html" class="w-full py-4 px-4 rounded-xl bg-gradient-to-r from-accent-indigo to-accent-violet hover:opacity-95 text-white font-bold text-sm transition-all duration-200 shadow-glow-sm flex items-center justify-center gap-2">
+              <span>Growth Engine anfragen</span>
+              <i data-lucide="sparkles" class="w-4 h-4"></i>
+            </a>
+          </div>
+
+          <!-- PAKET 3: SCALE PARTNER -->
+          <div class="glass-card rounded-3xl p-8 flex flex-col justify-between border-white/10 hover:border-slate-400/30">
+            <div>
+              <div class="flex justify-between items-center mb-4">
+                <span class="text-xs font-bold uppercase tracking-wider text-slate-400">Paket 03</span>
+                <span class="text-xs font-medium px-2.5 py-1 rounded-full bg-slate-800 text-slate-300 border border-slate-700">Rundum-Sorglos</span>
+              </div>
+              <h3 class="text-2xl font-bold text-white">Scale Partner</h3>
+              <p class="text-slate-400 text-xs mt-1">Für Betriebe, die in ihrer Region die klare Nummer 1 werden und alles abgeben wollen.</p>
+              
+              <div class="my-6 pb-6 border-b border-white/10">
+                <div class="flex items-baseline gap-1">
+                  <span class="text-4xl font-extrabold text-white">1.690 €</span>
+                  <span class="text-xs text-slate-400">/ Monat</span>
+                </div>
+                <div class="text-[11px] text-emerald-400 mt-1 font-semibold">✓ Komplette Betreuung all Ihrer Kanäle</div>
+              </div>
+
+              <ul class="space-y-3.5 text-xs text-slate-300 mb-8">
+                <li class="flex items-start gap-3">
+                  <i data-lucide="check-circle-2" class="w-4 h-4 text-accent-cyan shrink-0 mt-0.5"></i>
+                  <span><strong>Werbung überall:</strong> Meta, Google & TikTok</span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <i data-lucide="check-circle-2" class="w-4 h-4 text-accent-cyan shrink-0 mt-0.5"></i>
+                  <span><strong>8 bis 12 Videos & Beiträge</strong> jeden Monat</span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <i data-lucide="check-circle-2" class="w-4 h-4 text-accent-cyan shrink-0 mt-0.5"></i>
+                  <span><strong>Direkter WhatsApp- oder Slack-Kontakt</strong> mit Marlon & Elias</span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <i data-lucide="check-circle-2" class="w-4 h-4 text-accent-cyan shrink-0 mt-0.5"></i>
+                  <span>Schnelle Antworten und Änderungen innerhalb weniger Stunden</span>
+                </li>
+              </ul>
+            </div>
+
+            <a href="buchen.html" class="w-full py-3.5 px-4 rounded-xl bg-white/10 hover:bg-white/20 text-white font-semibold text-sm transition-all duration-200 border border-white/15 flex items-center justify-center gap-2">
+              <span>Scale Partner wählen</span>
+              <i data-lucide="arrow-right" class="w-4 h-4"></i>
+            </a>
+          </div>
+
+        </div>
+
+        <div class="text-center mt-12">
+          <a href="preise.html" class="inline-flex items-center gap-2 text-sm font-semibold text-indigo-300 hover:text-white transition-colors">
+            <span>Paketvergleich & Rechner ansehen</span>
+            <i data-lucide="arrow-right" class="w-4 h-4"></i>
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==================== FOUNDERS SECTION ==================== -->
+    <section id="founders" class="py-24 relative overflow-hidden">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="text-center max-w-3xl mx-auto mb-16">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full badge-gradient text-xs font-semibold text-indigo-300 uppercase tracking-wider mb-3">
+            Wer dahinter steckt
+          </div>
+          <h2 class="text-3xl sm:text-5xl font-extrabold text-white tracking-tight">
+            Keine anonyme Agentur. <br class="hidden sm:block">Zwei Gründer, die mit anpacken.
+          </h2>
+          <p class="mt-4 text-slate-400 text-base sm:text-lg">
+            Wir haben EMPACT STUDIO gegründet, weil wir es leid waren, wie teuer und kompliziert Marketing oft gemacht wird. Bei uns sprechen Sie direkt mit uns beiden.
+          </p>
+        </div>
+
+        <!-- Founders Cards Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+          
+          <!-- Marlon Staatz -->
+          <div class="glass-card rounded-3xl p-8 sm:p-10 relative overflow-hidden flex flex-col justify-between group">
+            <div class="absolute -top-12 -right-12 w-48 h-48 bg-indigo-600/10 rounded-full blur-3xl"></div>
+            
+            <div>
+              <div class="flex items-center gap-5 mb-6">
+                <div class="w-20 h-20 rounded-2xl bg-gradient-to-tr from-indigo-900 via-indigo-700 to-slate-800 border-2 border-indigo-500/40 flex items-center justify-center text-2xl font-black text-white shadow-glow-sm">
+                  MS
+                </div>
+                <div>
+                  <h3 class="text-2xl font-bold text-white">Marlon Staatz</h3>
+                  <div class="text-xs font-semibold text-accent-indigo tracking-wider uppercase mt-0.5">Gründer & Werbe-Spezialist</div>
+                  <div class="text-xs text-slate-400 mt-1">Verantwortlich für Social Media Werbung & Anfragen</div>
+                </div>
+              </div>
+
+              <p class="text-slate-300 text-sm leading-relaxed">
+                „Werbung muss sich für Sie lohnen – ganz einfach. Ich sorge dafür, dass Ihr Werbebudget nicht verschwendet wird, sondern dass sich jede Woche echte Menschen bei Ihnen melden, die Ihre Dienstleistung kaufen wollen.“
+              </p>
+            </div>
+
+            <div class="mt-8 pt-6 border-t border-white/10 flex items-center justify-between">
+              <div class="flex items-center gap-2 text-xs text-slate-400">
+                <i data-lucide="check" class="w-4 h-4 text-accent-cyan"></i>
+                <span>Spezialist für Instagram, Facebook & TikTok</span>
+              </div>
+              <a href="buchen.html" class="text-xs font-semibold text-indigo-400 hover:text-indigo-300 flex items-center gap-1 group-hover:translate-x-1 transition-transform">
+                <span>Gespräch buchen</span>
+                <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Elias Ambrosius -->
+          <div class="glass-card rounded-3xl p-8 sm:p-10 relative overflow-hidden flex flex-col justify-between group">
+            <div class="absolute -top-12 -right-12 w-48 h-48 bg-violet-600/10 rounded-full blur-3xl"></div>
+            
+            <div>
+              <div class="flex items-center gap-5 mb-6">
+                <div class="w-20 h-20 rounded-2xl bg-gradient-to-tr from-violet-900 via-violet-700 to-slate-800 border-2 border-violet-500/40 flex items-center justify-center text-2xl font-black text-white shadow-glow-sm">
+                  EA
+                </div>
+                <div>
+                  <h3 class="text-2xl font-bold text-white">Elias Ambrosius</h3>
+                  <div class="text-xs font-semibold text-accent-violet tracking-wider uppercase mt-0.5">Gründer & Webdesigner</div>
+                  <div class="text-xs text-slate-400 mt-1">Verantwortlich für Websites, Design & Technik</div>
+                </div>
+              </div>
+
+              <p class="text-slate-300 text-sm leading-relaxed">
+                „Viele Betriebe leisten hervorragende Arbeit, sehen im Internet aber aus wie vor 15 Jahren. Ich baue Ihnen eine Website, auf die Sie stolz sind und die Kunden sofort zeigt, wie professionell Sie arbeiten.“
+              </p>
+            </div>
+
+            <div class="mt-8 pt-6 border-t border-white/10 flex items-center justify-between">
+              <div class="flex items-center gap-2 text-xs text-slate-400">
+                <i data-lucide="check" class="w-4 h-4 text-accent-violet"></i>
+                <span>Modernes Design & schnelle Technik</span>
+              </div>
+              <a href="buchen.html" class="text-xs font-semibold text-indigo-400 hover:text-indigo-300 flex items-center gap-1 group-hover:translate-x-1 transition-transform">
+                <span>Gespräch buchen</span>
+                <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+              </a>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="mt-12 text-center">
+          <a href="ueber-uns.html" class="inline-flex items-center gap-2 text-sm font-semibold text-slate-300 hover:text-white transition-colors">
+            <span>Mehr über Marlon & Elias erfahren</span>
+            <i data-lucide="arrow-right" class="w-4 h-4"></i>
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==================== QUICK CTA & CONTACT ==================== -->
+    <section class="py-20 relative overflow-hidden">
+      <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <div class="glass-card rounded-3xl p-10 sm:p-14 border-indigo-500/30 shadow-glow-md">
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-white">
+            Lassen Sie uns einfach kurz sprechen.
+          </h2>
+          <p class="mt-4 text-slate-300 text-sm sm:text-base max-w-xl mx-auto">
+            30 Minuten, kostenlos und unverbindlich. Wir schauen uns Ihren Betrieb an und sagen Ihnen ehrlich, wie Sie mehr Kunden gewinnen können.
+          </p>
+          <div class="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
+            <a href="buchen.html" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-accent-indigo text-white font-bold text-sm shadow-glow-sm hover:scale-105 transition-all flex items-center justify-center gap-2">
+              <i data-lucide="calendar" class="w-4 h-4"></i>
+              <span>Kostenloses Erstgespräch buchen</span>
+            </a>
+            <a href="kontakt.html" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-white/10 hover:bg-white/20 text-white font-semibold text-sm transition-colors">
+              Nachricht schreiben
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="border-t border-white/10 bg-obsidian-deep py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+        
+        <!-- Brand & Slogan -->
+        <div class="flex items-center gap-3">
+          <img src="assets/logo-white.png" alt="EMPACT STUDIO" class="h-9 sm:h-10 w-auto object-contain">
+          <span class="text-xs text-slate-500">| Marlon Staatz & Elias Ambrosius GbR</span>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="flex items-center gap-6 text-xs text-slate-400">
+          <a href="leistungen.html" class="hover:text-white transition-colors">Leistungen</a>
+          <a href="preise.html" class="hover:text-white transition-colors">Preise & Pakete</a>
+          <a href="ueber-uns.html" class="hover:text-white transition-colors">Über uns</a>
+          <a href="kontakt.html" class="hover:text-white transition-colors">Kontakt</a>
+          <a href="buchen.html" class="hover:text-white transition-colors">Termin buchen</a>
+        </div>
+
+        <!-- Legal Links & Copyright -->
+        <div class="flex items-center gap-4 text-xs text-slate-400">
+          <a href="impressum.html" class="hover:text-white transition-colors">Impressum</a>
+          <span>•</span>
+          <a href="datenschutz.html" class="hover:text-white transition-colors">Datenschutz</a>
+          <span>•</span>
+          <span class="text-slate-400">&copy; <span id="currentYear"></span> EMPACT STUDIO</span>
+        </div>
+
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- ==================== INTERACTIVITY JAVASCRIPT ==================== -->
+  <script>
+    lucide.createIcons();
+    document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+    // Mobile Menu Toggle
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const menuIconOpen = document.getElementById('menuIconOpen');
+    const menuIconClose = document.getElementById('menuIconClose');
+
+    mobileMenuBtn.addEventListener('click', () => {
+      const isExpanded = !mobileMenu.classList.contains('hidden');
+      if (isExpanded) {
+        mobileMenu.classList.add('hidden');
+        menuIconOpen.classList.remove('hidden');
+        menuIconClose.classList.add('hidden');
+      } else {
+        mobileMenu.classList.remove('hidden');
+        menuIconOpen.classList.add('hidden');
+        menuIconClose.classList.remove('hidden');
+      }
+    });
+  </script>
+</body>
+</html>
