@@ -218,9 +218,9 @@ body header nav > a:first-child { display: inline-flex; flex: 0 0 auto; align-it
 body header nav img { max-height: 2.75rem; }
 body header nav img { display: block; width: auto; }
 
-body header nav > div:nth-child(2) { display: flex; align-items: center; gap: 2rem; font-size: 0.875rem; font-weight: 500; line-height: 20px; white-space: nowrap; }
-body header nav > div:nth-child(2) a { color: #d2dae5 !important; white-space: nowrap; }
-body header nav > div:nth-child(2) a[aria-current="page"], body header nav > div:nth-child(2) a.text-white { color: #fff !important; font-weight: 600; }
+body header nav > div:nth-child(2) { display: flex; align-items: center; gap: 2rem; font-size: 0.8125rem; font-weight: 500; line-height: 20px; white-space: nowrap; }
+body header nav > div:nth-child(2) a { color: #d2dae5 !important; font-weight: 500 !important; white-space: nowrap; }
+body header nav > div:nth-child(2) a[aria-current="page"], body header nav > div:nth-child(2) a.text-white { color: #fff !important; }
 body header nav > div:nth-child(3) { display: flex; align-items: center; gap: 0.75rem; }
 body header nav > div:nth-child(3) a, body #mobileMenu > div > a:last-child {
   display: inline-flex;
@@ -257,7 +257,7 @@ body header nav > button#mobileMenuBtn {
 }
 body #mobileMenu { display: none; }
 body #mobileMenu > div { display: flex; flex-direction: column; align-items: stretch; gap: 1rem; padding: 1.5rem; }
-body #mobileMenu a { display: block; padding: 0.5rem 0; color: #d2dae5 !important; text-align: center; }
+body #mobileMenu a { display: block; padding: 0.5rem 0; color: #d2dae5 !important; font-weight: 500 !important; text-align: center; }
 body #mobileMenu a.text-white, body #mobileMenu a[aria-current="page"] { color: #fff !important; }
 body #mobileMenu > div > a:last-child { margin-top: 0.25rem; padding: 0.75rem 1rem; }
 
