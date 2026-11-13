@@ -66,7 +66,20 @@
             <span>Erstgespräch buchen</span>
           </a>
         </div>
+        <button id="mobileMenuBtn" aria-label="Menü" class="md:hidden p-2 text-slate-300 hover:text-white focus:outline-none">
+          <svg aria-hidden="true" class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 6h16M4 12h16M4 18h16"></path></svg>
+        </button>
       </nav>
+    </div>
+    <div id="mobileMenu" class="hidden md:hidden max-w-7xl mx-auto px-4 mt-2">
+      <div class="glass-nav rounded-2xl p-6 border border-white/10 flex flex-col gap-4 text-center">
+        <a href="index.html" class="text-slate-300 py-2">Startseite</a>
+        <a href="leistungen.html" class="text-slate-300 py-2">Leistungen</a>
+        <a href="preise.html" class="text-slate-300 py-2">Preise & Pakete</a>
+        <a href="ueber-uns.html" class="text-slate-300 py-2">Über uns</a>
+        <a href="kontakt.html" class="text-slate-300 py-2">Kontakt</a>
+        <a href="buchen.html" class="py-3 rounded-xl bg-white text-black font-semibold text-xs">Erstgespräch buchen</a>
+      </div>
     </div>
   </header>
 
@@ -124,5 +137,10 @@
       &copy; EMPACT STUDIO | Marlon Staatz & Elias Ambrosius GbR. Alle Rechte vorbehalten.
     </div>
   </footer>
+  <script>
+    document.getElementById('mobileMenuBtn').addEventListener('click', () => {
+      document.getElementById('mobileMenu').classList.toggle('hidden');
+    });
+  </script>
 </body>
 </html>

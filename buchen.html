@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#172338">
   <title>Erstgespräch buchen | EMPACT STUDIO</title>
-  <meta name="description" content="Buchen Sie Ihr unverbindliches 30-minütiges Kennenlerngespräch mit Marlon Staatz oder Elias Ambrosius. Einfach Termin wählen – 100% kostenlos.">
+  <meta name="description" content="Buchen Sie Ihr unverbindliches 30-minütiges Kennenlerngespräch mit EMPACT STUDIO. Einfach Termin wählen – 100% kostenlos.">
   
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='24' fill='%2308090C'/><path d='M30 25h40v12H44v13h22v12H44v13h26v12H30z' fill='%23FFFFFF'/></svg>">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -37,12 +37,41 @@
     body { background-color: #090A0D; color: #F4F4F6; font-family: 'Plus Jakarta Sans', sans-serif; overflow-x: hidden; letter-spacing: -0.01em; }
     .glass-nav { background: rgba(10, 11, 15, 0.82); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border: 1px solid rgba(255, 255, 255, 0.07); }
     .minimal-card { background: rgba(15, 16, 21, 0.7); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border: 1px solid rgba(255, 255, 255, 0.07); }
-    .slot-btn.active { background: #FFFFFF; color: #000000; border-color: #FFFFFF; font-weight: 600; }
-    .expert-card.active { border-color: rgba(255, 255, 255, 0.35); background: rgba(255, 255, 255, 0.06); }
+    .slot-btn.active { background: #376bb0; color: #FFFFFF; border-color: #376bb0; font-weight: 600; }
+    body.booking-page input:not([type="range"]),
+    body.booking-page textarea,
+    body.booking-page select {
+      background-color: #111a27 !important;
+      border-color: rgba(210, 222, 239, 0.13) !important;
+      color: #fff !important;
+      -webkit-text-fill-color: #fff !important;
+    }
+    body.booking-page input::placeholder,
+    body.booking-page textarea::placeholder {
+      color: rgba(255, 255, 255, 0.6) !important;
+      -webkit-text-fill-color: rgba(255, 255, 255, 0.6) !important;
+    }
+    body.booking-page select option { background-color: #111a27; color: #fff; }
+    body.booking-page .date-tab-btn,
+    body.booking-page .slot-btn { border-width: 2px !important; }
+    body.booking-page .date-tab-btn:not(.active),
+    body.booking-page .slot-btn:not(.active) {
+      background-color: #376bb0 !important;
+      border-color: #376bb0 !important;
+      color: #fff !important;
+    }
+    body.booking-page .date-tab-btn:not(.active) span { color: #fff !important; }
+    body.booking-page .date-tab-btn.active,
+    body.booking-page .slot-btn.active {
+      background-color: #fff !important;
+      border: 2px solid #376bb0 !important;
+      color: #000 !important;
+    }
+    body.booking-page .date-tab-btn.active span { color: #000 !important; }
   </style>
   <link rel="stylesheet" href="assets/site-theme.css?v=11">
 </head>
-<body class="selection:bg-white selection:text-black">
+<body class="booking-page selection:bg-white selection:text-black">
 
   <!-- NAVIGATION -->
   <header class="fixed top-0 left-0 right-0 z-50">
@@ -160,37 +189,9 @@
         <div class="lg:col-span-8">
           <div class="minimal-card rounded-2xl p-6 sm:p-8" id="bookingCard">
             
-            <!-- STEP 1: Select Expert -->
+            <!-- STEP 1: Date & Time Picker -->
             <div class="mb-8">
-              <label class="block text-xs font-mono uppercase tracking-wider text-neutral-500 mb-3">1. Mit wem möchten Sie sprechen?</label>
-              <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
-                <div onclick="selectExpert('Marlon & Elias', this)" class="expert-card active cursor-pointer p-4 rounded-xl border border-white/10 transition-all">
-                  <div class="flex items-center justify-between mb-1.5">
-                    <span class="text-xs font-semibold text-white">Marlon & Elias</span>
-                    <i data-lucide="users" class="w-3.5 h-3.5 text-neutral-400"></i>
-                  </div>
-                  <p class="text-[11px] text-neutral-400">Beide Gründer (Website & Werbung)</p>
-                </div>
-                <div onclick="selectExpert('Marlon Staatz', this)" class="expert-card cursor-pointer p-4 rounded-xl border border-white/10 transition-all">
-                  <div class="flex items-center justify-between mb-1.5">
-                    <span class="text-xs font-semibold text-white">Marlon Staatz</span>
-                    <i data-lucide="target" class="w-3.5 h-3.5 text-neutral-400"></i>
-                  </div>
-                  <p class="text-[11px] text-neutral-400">Fokus: Werbung & Neukunden</p>
-                </div>
-                <div onclick="selectExpert('Elias Ambrosius', this)" class="expert-card cursor-pointer p-4 rounded-xl border border-white/10 transition-all">
-                  <div class="flex items-center justify-between mb-1.5">
-                    <span class="text-xs font-semibold text-white">Elias Ambrosius</span>
-                    <i data-lucide="layout" class="w-3.5 h-3.5 text-neutral-400"></i>
-                  </div>
-                  <p class="text-[11px] text-neutral-400">Fokus: Website, Design & Technik</p>
-                </div>
-              </div>
-            </div>
-
-            <!-- STEP 2: Date & Time Picker -->
-            <div class="mb-8">
-              <label class="block text-xs font-mono uppercase tracking-wider text-neutral-500 mb-3">2. Tag & Wunschzeit wählen</label>
+              <label class="block text-xs font-mono uppercase tracking-wider text-neutral-500 mb-3">1. Tag & Wunschzeit wählen</label>
               
               <div class="grid grid-cols-2 sm:grid-cols-5 gap-2.5 mb-5" id="dateTabsContainer"></div>
 
@@ -208,27 +209,27 @@
             <!-- STEP 3: Form Details -->
             <form id="bookingForm" onsubmit="submitBooking(event)" class="space-y-4">
               <input type="text" id="bookingWebsite" tabindex="-1" autocomplete="off" class="hidden" aria-hidden="true">
-              <label class="block text-xs font-mono uppercase tracking-wider text-neutral-500 mb-1">3. Ihre Kontaktdaten</label>
+              <label class="block text-xs font-mono uppercase tracking-wider text-neutral-500 mb-1">2. Ihre Kontaktdaten</label>
               
               <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
                 <div>
                   <input type="text" id="bName" required maxlength="120" placeholder="Ihr Name *" 
-                         class="w-full px-4 py-3 rounded-xl bg-white/[0.03] border border-white/10 text-white placeholder-neutral-500 text-xs focus:outline-none focus:border-white/30">
+                         class="w-full px-4 py-3 rounded-xl bg-white/[0.03] border border-white/10 text-white placeholder-white/60 text-xs focus:outline-none focus:border-white/30">
                 </div>
                 <div>
                   <input type="email" id="bEmail" required maxlength="254" placeholder="Ihre E-Mail-Adresse *" 
-                         class="w-full px-4 py-3 rounded-xl bg-white/[0.03] border border-white/10 text-white placeholder-neutral-500 text-xs focus:outline-none focus:border-white/30">
+                         class="w-full px-4 py-3 rounded-xl bg-white/[0.03] border border-white/10 text-white placeholder-white/60 text-xs focus:outline-none focus:border-white/30">
                 </div>
               </div>
 
               <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
                 <div>
                   <input type="text" id="bCompany" required maxlength="160" placeholder="Name Ihres Unternehmens *" 
-                         class="w-full px-4 py-3 rounded-xl bg-white/[0.03] border border-white/10 text-white placeholder-neutral-500 text-xs focus:outline-none focus:border-white/30">
+                         class="w-full px-4 py-3 rounded-xl bg-white/[0.03] border border-white/10 text-white placeholder-white/60 text-xs focus:outline-none focus:border-white/30">
                 </div>
                 <div>
                   <input type="tel" id="bPhone" required maxlength="50" placeholder="Telefonnummer für Rückruf *" 
-                         class="w-full px-4 py-3 rounded-xl bg-white/[0.03] border border-white/10 text-white placeholder-neutral-500 text-xs focus:outline-none focus:border-white/30">
+                         class="w-full px-4 py-3 rounded-xl bg-white/[0.03] border border-white/10 text-white placeholder-white/60 text-xs focus:outline-none focus:border-white/30">
                 </div>
               </div>
 
@@ -243,7 +244,7 @@
 
               <div>
                 <textarea id="bNotes" rows="2" maxlength="3000" placeholder="Optionale Nachricht: Was ist aktuell Ihre größte Herausforderung?" 
-                          class="w-full px-4 py-3 rounded-xl bg-white/[0.03] border border-white/10 text-white placeholder-neutral-500 text-xs focus:outline-none focus:border-white/30"></textarea>
+                          class="w-full px-4 py-3 rounded-xl bg-white/[0.03] border border-white/10 text-white placeholder-white/60 text-xs focus:outline-none focus:border-white/30"></textarea>
               </div>
 
               <p id="bookingFormStatus" class="hidden text-sm text-red-300" role="status" aria-live="polite"></p>
@@ -265,7 +266,6 @@
               </p>
               
               <div class="mt-6 p-4 rounded-xl bg-white/[0.02] border border-white/[0.08] max-w-sm mx-auto text-xs text-left space-y-2">
-                <div class="text-neutral-400">Ansprechpartner: <strong class="text-white" id="cExpert">Marlon & Elias</strong></div>
                 <div class="text-neutral-400">Datum: <strong class="text-white" id="cDate">Morgen</strong></div>
                 <div class="text-neutral-400">Uhrzeit: <strong class="text-white" id="cTime">11:00 Uhr</strong></div>
                 <div class="text-neutral-400">Ablauf: <strong class="text-white">Wir rufen Sie an oder treffen uns online</strong></div>
@@ -313,16 +313,9 @@
       document.getElementById('mobileMenu').classList.toggle('hidden');
     });
 
-    let selectedExpert = 'Marlon & Elias';
     let selectedSlot = '11:00';
     let selectedDate = '';
     let selectedDateLabel = '';
-
-    function selectExpert(expert, el) {
-      selectedExpert = expert;
-      document.querySelectorAll('.expert-card').forEach(c => c.classList.remove('active'));
-      el.classList.add('active');
-    }
 
     function selectSlot(slot, el) {
       selectedSlot = slot;
@@ -358,8 +351,8 @@
 
         const btn = document.createElement('button');
         btn.type = 'button';
-        btn.className = `date-tab-btn p-3 rounded-xl border text-center transition-all ${count === 0 ? 'bg-white text-black border-white' : 'border-white/10 bg-white/[0.02] text-neutral-400 hover:border-white/20'}`;
-        btn.innerHTML = `<span class="block text-[10px] uppercase font-mono ${count === 0 ? 'text-neutral-600' : 'text-neutral-500'}">${dayName}</span><span class="block text-xs font-bold ${count === 0 ? 'text-black' : 'text-white'} mt-0.5">${dayNum}. ${monthName}</span>`;
+        btn.className = `date-tab-btn p-3 rounded-xl border text-center transition-all ${count === 0 ? 'active border-white' : 'border-white/10 bg-white/[0.02] text-neutral-400 hover:border-white/20'}`;
+        btn.innerHTML = `<span class="block text-[10px] uppercase font-mono ${count === 0 ? 'text-white' : 'text-neutral-500'}">${dayName}</span><span class="block text-xs font-bold text-white mt-0.5">${dayNum}. ${monthName}</span>`;
         btn.onclick = function() {
           selectedDate = dateValue;
           selectedDateLabel = dateLabel;
@@ -369,10 +362,10 @@
             if (spans[0]) spans[0].className = 'block text-[10px] uppercase font-mono text-neutral-500';
             if (spans[1]) spans[1].className = 'block text-xs font-bold text-white mt-0.5';
           });
-          btn.className = 'date-tab-btn p-3 rounded-xl border border-white bg-white text-black text-center transition-all';
+          btn.className = 'date-tab-btn active p-3 rounded-xl border-white text-center transition-all';
           const spans = btn.querySelectorAll('span');
-          if (spans[0]) spans[0].className = 'block text-[10px] uppercase font-mono text-neutral-600';
-          if (spans[1]) spans[1].className = 'block text-xs font-bold text-black mt-0.5';
+          if (spans[0]) spans[0].className = 'block text-[10px] uppercase font-mono text-white';
+          if (spans[1]) spans[1].className = 'block text-xs font-bold text-white mt-0.5';
         };
         dateContainer.appendChild(btn);
         count++;
@@ -397,7 +390,6 @@
             'Content-Type': 'application/json'
           },
           body: JSON.stringify({
-            expert: selectedExpert,
             date: selectedDate,
             time: selectedSlot,
             name: document.getElementById('bName').value,
@@ -418,7 +410,6 @@
         form.classList.add('hidden');
         document.getElementById('bookingConfirmation').classList.remove('hidden');
         document.getElementById('confirmSummary').textContent = result.message;
-        document.getElementById('cExpert').textContent = selectedExpert;
         document.getElementById('cDate').textContent = selectedDateLabel;
         document.getElementById('cTime').textContent = `${selectedSlot} Uhr`;
         lucide.createIcons();

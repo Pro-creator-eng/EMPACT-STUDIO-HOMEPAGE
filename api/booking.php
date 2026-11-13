@@ -8,16 +8,14 @@ $name = api_field('name', 120, true);
 $email = api_email_or_reject(api_field('email', 254, true));
 $company = api_field('company', 160, true);
 $phone = api_field('phone', 50, true);
-$expert = api_field('expert', 80, true);
 $date = api_field('date', 10, true);
 $time = api_field('time', 5, true);
 $interest = api_field('interest', 160);
 $notes = api_notes('notes', 3000);
 
-$experts = ['Marlon & Elias', 'Marlon Staatz', 'Elias Ambrosius'];
 $times = ['09:30', '11:00', '13:30', '15:00', '16:30', '18:00'];
-if (!in_array($expert, $experts, true) || !in_array($time, $times, true)) {
-    api_respond(400, ['success' => false, 'message' => 'Bitte wählen Sie eine gültige Ansprechperson und Uhrzeit.']);
+if (!in_array($time, $times, true)) {
+    api_respond(400, ['success' => false, 'message' => 'Bitte wählen Sie eine gültige Uhrzeit.']);
 }
 
 $timezone = new DateTimeZone('Europe/Berlin');
@@ -52,7 +50,6 @@ if ($businessDaysAhead > 5) {
 $body = "Neue Terminanfrage über die EMPACT-STUDIO-Website\n";
 $body .= "WICHTIG: Dies ist eine Anfrage, noch keine bestätigte Kalenderbuchung.\n\n";
 $body .= "Wunschtermin: " . $requestedDate->format('d.m.Y') . " um {$time} Uhr (Europe/Berlin)\n";
-$body .= "Gewünschte Ansprechperson: {$expert}\n";
 $body .= "Name: {$name}\n";
 $body .= "E-Mail: {$email}\n";
 $body .= "Betrieb: {$company}\n";

@@ -246,7 +246,7 @@ body header nav > div:nth-child(3) svg, body header nav > div:nth-child(3) i[dat
 body header nav > div:nth-child(3) i[data-lucide="calendar"] { color: currentColor; }
 body header nav > div:nth-child(3) svg { display: block; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
 body header nav > button#mobileMenuBtn {
-  display: none;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
   padding: 0.5rem;
@@ -256,6 +256,7 @@ body header nav > button#mobileMenuBtn {
   cursor: pointer;
 }
 body #mobileMenu { display: none; }
+body #mobileMenu:not(.hidden) { display: block; }
 body #mobileMenu > div { display: flex; flex-direction: column; align-items: stretch; gap: 1rem; padding: 1.5rem; }
 body #mobileMenu a { display: block; padding: 0.5rem 0; color: #d2dae5 !important; font-weight: 500 !important; text-align: center; }
 body #mobileMenu a.text-white, body #mobileMenu a[aria-current="page"] { color: #fff !important; }
@@ -339,7 +340,8 @@ body input:focus, body textarea:focus, body select:focus {
 }
 
 body .slot-btn.active { background: var(--royal-blue) !important; border-color: var(--royal-blue) !important; color: #fff !important; }
-body .expert-card.active { background: #edf2f8 !important; border-color: var(--royal-blue) !important; }
+body .date-tab-btn.active { background: var(--royal-blue) !important; border-color: var(--royal-blue) !important; color: #fff !important; }
+body .date-tab-btn.active span { color: #fff !important; }
 body footer { background: var(--navy-deep) !important; border-color: rgba(255, 255, 255, 0.14) !important; }
 body footer, body footer [class*="text-neutral-"], body footer [class*="text-slate-"] { color: #c2cad5 !important; }
 body footer h1, body footer h2, body footer h3 { color: #f7f8fa !important; }
